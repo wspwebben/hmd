@@ -1,3 +1,9 @@
+@mixin inner() {
+  max-width: $inner-width;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
 @mixin hide-visually {
   position: absolute;
   height: 1px;

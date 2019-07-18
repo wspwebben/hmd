@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (hmd-header)
+
+mixin hmd-header(isFooter, mods)
+
+  //- Принимает:
+  //-   isFooter {boolean} - шапка или подвал сайта
+  //-   mods     {string} - список модификаторов
+  //- Вызов:
+        +hmd-header(true, 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' hmd-header--' + modsList[i].trim();
+      }
+    }
+
+    var tag = isFooter ? 'footer' : 'header';
+
+  #{tag}.hmd-header(class=allMods)&attributes(attributes)
+    .hmd-header__inner
+      +logo('/')
+        img(src='img/logo.svg', alt='Logo')
+      +call()
+      

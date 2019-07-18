@@ -49,9 +49,13 @@ $font-family--monospace:     SFMono-Regular, Menlo, Monaco, Consolas, Liberation
 
 // Ширины
 
+$gutter: 20px;
+
 $screen-mobile:               320px;
 $screen-tablet:               768px;
 $screen-desktop:              1200px;
+
+$inner-width: $screen-desktop;
 
 // Разное
 

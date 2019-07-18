@@ -1,0 +1,23 @@
+// В этом файле должны быть стили для БЭМ-блока call, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.call {
+
+  $block-name:                &; // #{$block-name}__element
+  
+  $phone-color: $black;
+  $icon-color: $color-primary;
+
+  text-decoration: none;
+
+  &__number {
+    display: inline-block;
+    color: $phone-color;
+    margin-left: 10px;
+  }
+  
+  &__icon {
+    fill: $icon-color;
+  }
+}

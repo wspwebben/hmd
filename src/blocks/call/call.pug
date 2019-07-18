@@ -1,0 +1,28 @@
+//- Все примеси в этом файле должны начинаться c имени блока (call)
+
+mixin call(number, mods)
+
+  //- Принимает:
+  //-   number    {string} - номер телефона
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +call('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' call--' + modsList[i].trim();
+      }
+    }
+
+    var phoneNumber = number || '609 208 9993';
+    var telAttr = phoneNumber.split(' ').join('');
+
+  a.call(class=allMods href=`tel:${telAttr}`)&attributes(attributes)
+    svg.call__icon(width="17" height="17")
+      use(xlink:href="img/sprite.svg#call")
+    span.call__number
+      = phoneNumber

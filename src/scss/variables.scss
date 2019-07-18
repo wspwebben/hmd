@@ -23,6 +23,7 @@ $body-bg:                     $gray-lightest;
 
 $link-color:                  $color-primary;
 $link-color-hover:            $color-accent;
+$link-color-disabled:         $gray-light;
 
 // Базовая типографика
 
@@ -59,6 +60,6 @@ $inner-width: $screen-desktop;
 
 // Разное
 
-$border-radius:               3px;
+$border-radius:               10px;
 $opacity:                     0.7;
 $transition-time:             0.3s;

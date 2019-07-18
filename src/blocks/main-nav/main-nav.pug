@@ -16,7 +16,7 @@ mixin main-nav(activeItem)
     ul.main-nav__list
       each menuItem in mainMenu
         +main-nav-item(activeItem, menuItem)
-    //- +button()
+    +button('Contact Us')
 
 mixin main-nav-item(activeItem, item)
   -

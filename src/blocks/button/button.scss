@@ -1,0 +1,70 @@
+// В этом файле должны быть стили для БЭМ-блока button, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.button {
+  display: inline-block;
+  background-color: $link-color;
+  border: 1px solid $link-color;
+  border-top-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  padding: 13px 20px;
+  min-width: 160px;
+  
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: $white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+
+  transition:
+    background-color $transition-time,
+    border-color $transition-time,
+    color $transition-time;
+
+  &:hover,
+  &:focus {
+    background-color: $link-color-hover;
+    border-color: $link-color-hover;
+
+    color: $white;
+  }
+
+  &:active,
+  &--active {
+    // TODO: add :active styles
+  }
+
+  &:disabled,
+  &--disabled {
+    background-color: $link-color-disabled;
+    border-color: rgba($gray, $opacity);
+    color: rgba($gray, $opacity);
+  }
+
+  &--big {
+    min-width: 260px;
+    font-size: 1.125rem;
+    padding: 18px 80px;
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: $black;
+  }
+
+  &--arrow {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  &__arrow {
+    fill: currentColor;
+    margin-left: 0.5em;
+    width: 1.5em;
+    height: 0.65em;
+  }
+}

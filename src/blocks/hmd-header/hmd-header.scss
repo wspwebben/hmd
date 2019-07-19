@@ -14,5 +14,16 @@
     @include inner();
     padding-top: $vertical-padding;
     padding-bottom: $vertical-padding;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 1.25rem;
+  }
+
+  &__menu {
+    margin-left: auto;
   }
 }

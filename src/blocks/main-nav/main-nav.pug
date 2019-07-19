@@ -11,17 +11,18 @@ mixin main-nav(activeItem)
   //- подключаем файл со структурой данных блока
   include main-nav.data.pug
 
-  nav.main-nav
+  nav.main-nav&attributes(attributes)
     //- +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
     ul.main-nav__list
       each menuItem in mainMenu
         +main-nav-item(activeItem, menuItem)
-    +button('Contact Us')
+    +button('Contact Us').main-nav__call
 
 mixin main-nav-item(activeItem, item)
   -
     const itemClass = 'main-nav__item';
+    const activeClass = (activeItem === item.name) ? `${itemClass}--active` : ''
 
-  li(class= itemClass + (activeItem === item.name) ? `${itemClass}--active` : '')
+  li(class= `${itemClass} ${activeClass}`)
     a.main-nav__link(href=item.url)= item.text
-    block
+      block

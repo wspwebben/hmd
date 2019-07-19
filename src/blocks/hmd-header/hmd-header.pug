@@ -22,8 +22,7 @@ mixin hmd-header(isFooter, mods)
 
   #{tag}.hmd-header(class=allMods)&attributes(attributes)
     .hmd-header__inner
-      +logo('/')
-        img(src='img/logo.svg', alt='Logo')
-      +call()
-      +main-nav('about')
+      +logo('/').hmd-header__logo
+      +call().hmd-header__call
+      +main-nav().hmd-header__menu
       

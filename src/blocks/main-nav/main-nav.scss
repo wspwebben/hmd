@@ -6,37 +6,55 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  position: relative;
-  z-index: 10;
+  $link-padding: 1.5em;
+  $link-color: $black;
+  $link-color-active: $color-primary;
 
-  // первый уровень
+  display: flex;
+  align-items: center;
+
   &__list {
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
   &__item {
-    position: relative;
-
+    color: $link-color;
+    font-size: 1rem;
+    
     &--active {
-
-      & > #{$block-name}__link { // stylelint-disable-line  selector-combinator-blacklist
-        color: #000;
+      position: relative;
+      color:  $link-color-active;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        left: $link-padding;
+        right: $link-padding;
+        height: 2px;
+        background-color: currentColor;
       }
     }
   }
-
+ 
   &__link {
     display: block;
-    padding: 0.5em 1em;
+    padding: 0.75em $link-padding;
     text-decoration: none;
-    background-color: #fff;
+    color: inherit;
 
     &:hover,
     &:focus {
       text-decoration: none;
-      background-color: $gray;
+      outline: 0;
     }
+  }
+
+  // call to action
+  &__call {
+    margin-left: 1.5em;
   }
 }

@@ -9,7 +9,20 @@
   display: inline-block;
   white-space: nowrap;
 
-  img {
+  &:hover,
+  &:focus {
+    outline: 0;
+
+    #{$block-name}__image {
+      background-color: lighten($logo-bg-color, 15);
+    }
+  }
+
+  &__image {
     display: block;
+    border-radius: 50%;
+    background-color: $logo-bg-color;
+    
+    transition: background-color 0.3s;
   }
 }

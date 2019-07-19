@@ -8,6 +8,10 @@
   
   margin: 2.5rem 0;
 
+  &__inner {
+    @include inner();
+  }
+
   &__list {
     display: flex;
     align-items: center;

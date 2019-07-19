@@ -20,11 +20,12 @@ mixin breadcrumbs(text, mods)
 
   if (page !== 'index')
     nav.breadcrumbs(class=allMods)&attributes(attributes)
-      ul.breadcrumbs__list
-        li.breadcrumbs__item
-          a.breadcrumbs__link.breadcrumbs__link--icon(href="/")
-            svg.breadcrubs__icon(width="18" height="18")
-              use(xlink:href="img/sprite.svg#home")
-            span.breadcrumbs__caption Home
-        li.breadcrumbs__point
-          span.breadcrumbs__caption= pages[page].text
+      .breadcrumbs__inner  
+        ul.breadcrumbs__list
+          li.breadcrumbs__item
+            a.breadcrumbs__link.breadcrumbs__link--icon(href="/")
+              svg.breadcrubs__icon(width="18" height="18")
+                use(xlink:href="img/sprite.svg#home")
+              span.breadcrumbs__caption Home
+          li.breadcrumbs__point
+            span.breadcrumbs__caption= pages[page].text

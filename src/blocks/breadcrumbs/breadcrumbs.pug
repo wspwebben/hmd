@@ -1,0 +1,30 @@
+//- Все примеси в этом файле должны начинаться c имени блока (breadcrumbs)
+
+mixin breadcrumbs(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +breadcrumbs('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' breadcrumbs--' + modsList[i].trim();
+      }
+    }
+
+  if (page !== 'index')
+    nav.breadcrumbs(class=allMods)&attributes(attributes)
+      ul.breadcrumbs__list
+        li.breadcrumbs__item
+          a.breadcrumbs__link.breadcrumbs__link--icon(href="/")
+            svg.breadcrubs__icon(width="18" height="18")
+              use(xlink:href="img/sprite.svg#home")
+            span.breadcrumbs__caption Home
+        li.breadcrumbs__point
+          span.breadcrumbs__caption= pages[page].text

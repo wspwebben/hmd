@@ -5,22 +5,19 @@ mixin main-nav()
 
   //- Принимает:
   //- Вызов:
-        +main-nav('about')
-
-  //- подключаем файл со структурой данных блока
-  include main-nav.data.pug
+        +main-nav()
 
   nav.main-nav&attributes(attributes)
     //- +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
     ul.main-nav__list
-      each menuItem in mainMenu
-        +main-nav-item(menuItem)
+      each menuItem, name in pages
+        +main-nav-item(menuItem, name)
     +button('Contact Us').main-nav__call
 
-mixin main-nav-item(item)
+mixin main-nav-item(item, name)
   -
     const itemClass = 'main-nav__item';
-    const activeClass = (page === item.name) ? `${itemClass}--active` : ''
+    const activeClass = (page === name) ? `${itemClass}--active` : ''
 
   li(class= `${itemClass} ${activeClass}`)
     a.main-nav__link(href=item.url)= item.text

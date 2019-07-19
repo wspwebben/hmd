@@ -18,5 +18,5 @@ mixin button(text, mods)
 
   #{tag}.button(class=allMods)&attributes(attributes)!= text
     if (modList.includes('arrow'))
-      svg.button__arrow(viewbox="0 0 20 9")
+      svg.button__arrow(viewBox="0 0 20 9")
         use(xlink:href="img/sprite.svg#arrow")

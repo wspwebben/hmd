@@ -39,13 +39,15 @@ html(class='page  no-js', lang='ru')
   body
     noscript У вас отключен JavaScript. Это пугает.
 
+    +page-header()
     .page__inner
-      +page-header()
+
+      +breadcrumbs()
 
       .page__content
         block content
 
-      +page-footer()
+    +page-footer()
 
     block page-bottom
       script(src='js/bundle.js')

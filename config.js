@@ -15,6 +15,7 @@ let config = {
   'addStyleBefore': [
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
+    'src/scss/fonts.scss',
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -27,10 +28,19 @@ let config = {
     './script.js',
   ],
   'addAssets': {
-    'src/fonts/demo-empty-open-sans.woff2': 'fonts/',
+    // Lora Regular
+    'src/fonts/Lora-Regular.woff': 'fonts/',
+    'src/fonts/Lora-Regular.woff2': 'fonts/',
+    // Roboto Regular
+    'src/fonts/Roboto-Regular.woff': 'fonts/',
+    'src/fonts/Roboto-Regular.woff2': 'fonts/',
+    // Roboto Bold Italic
+    'src/fonts/Roboto-BoldItalic.woff': 'fonts/',
+    'src/fonts/Roboto-BoldItalic.woff2': 'fonts/',
+    
+    // Asset images
     'src/img/*.{png,svg,jpg}': 'img/',
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
-    // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
   },
   'dir': {
     'src': 'src/',

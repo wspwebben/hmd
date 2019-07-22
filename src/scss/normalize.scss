@@ -117,10 +117,7 @@ a {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   margin-top: 1em;
   margin-bottom: 0.5em;
   font-family: $font-family;
@@ -129,12 +126,23 @@ h6 {
   color: currentColor;
 }
 
-h1 { font-size: $font-size-h1; }
-h2 { font-size: $font-size-h2; }
-h3 { font-size: $font-size-h3; }
-h4 { font-size: $font-size-h4; }
-h5 { font-size: $font-size-h5; }
-h6 { font-size: $font-size-h6; }
+h1 { 
+  font-size: $fz-title;
+  font-weight: normal;
+}
+
+h2 { 
+  font-size: $fz-subtitle;
+  font-weight: normal;
+}
+
+h3 { 
+  font-size: $fz-caption;
+}
+
+p  { 
+  font-size: $fz-text;
+}
 
 p,
 ul,

@@ -3,11 +3,11 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .button {
+  @include round-borders();
+
   display: inline-block;
   background-color: $link-color;
   border: 1px solid $link-color;
-  border-top-right-radius: $border-radius;
-  border-bottom-left-radius: $border-radius;
   padding: 13px 20px;
   min-width: 160px;
   

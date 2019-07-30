@@ -10,12 +10,21 @@
   $link-color: $black;
   $link-color-active: $color-primary;
 
-  display: flex;
-  align-items: center;
+  &__wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: $white;
+    transition: max-height $transition-time-fast;
+
+    &:not(.main-nav__wrapper--open) {
+      max-height: 0 !important;
+    }
+  }
 
   &__list {
-    display: flex;
-    align-items: center;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -26,24 +35,13 @@
     font-size: 1rem;
     
     &--active {
-      position: relative;
       color:  $link-color-active;
-      
-      &::after {
-        content: "";
-        position: absolute;
-        left: $link-padding;
-        right: $link-padding;
-        height: 2px;
-        background-color: currentColor;
-      }
     }
   }
  
   &__link {
     display: block;
     padding: 0.75em $link-padding;
-    text-decoration: none;
     color: inherit;
 
     &:hover,
@@ -53,8 +51,11 @@
     }
   }
 
-  // call to action
   &__call {
-    margin-left: 1.5em;
+    
+  }
+
+  &__contact {
+
   }
 }

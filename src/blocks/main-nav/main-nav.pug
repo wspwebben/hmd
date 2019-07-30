@@ -1,18 +1,16 @@
 //- Все примеси в этом файле должны начинаться c имени блока (main-nav)
 //- Структура меню — в main-nav.data.pug
 
+
 mixin main-nav()
-
-  //- Принимает:
-  //- Вызов:
-        +main-nav()
-
   nav.main-nav&attributes(attributes)
-    //- +burger('Показать главное меню', 'nav', 'main-nav--open')(class='main-nav__toggler')
-    ul.main-nav__list
-      each menuItem, name in pages
-        +main-nav-item(menuItem, name)
-    +button('Contact Us').main-nav__call
+    +burger().main-nav__toggle
+    .main-nav__wrapper
+      ul.main-nav__list
+        each menuItem, name in pages
+          +main-nav-item(menuItem, name)
+      +call().main-nav__call
+      +button('Contact Us').main-nav__contact
 
 mixin main-nav-item(item, name)
   -

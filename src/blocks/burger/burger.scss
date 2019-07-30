@@ -1,0 +1,115 @@
+// В этом файле должны быть стили для БЭМ-блока burger, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.burger {
+  @function widthReducer($width, $ratio: 1.5) {
+    @return ceil($width / $ratio);
+  }
+
+  $block: &;
+
+  $rem: $font-size;
+  $burger-width: 2 * $rem; // actual rems doesn't work well with width math
+  $padding: 0.75 * $rem;
+
+  $top-width: $burger-width;
+  $middle-width: widthReducer($top-width);
+  $bottom-width: widthReducer($middle-width);
+
+  $line-color: $color-primary;
+
+  // 
+
+  box-sizing: content-box; // paddings are used only to make clickable area bigger
+  position: relative;
+  // height: $burger-width;
+  margin: #{-$padding/2} -$padding;
+  padding: $padding;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    
+    #{$block}__icon::before,
+    #{$block}__line,
+    #{$block}__icon::after {
+      width: 100%;
+    }
+  }
+
+  &__icon::before,
+  &__line,
+  &__icon::after {
+    // common line styles
+    content: "";
+    position: absolute;
+    right: 0;
+    height: 2px;
+    background-color: $line-color;
+    transition: 
+      width $transition-time-slow,
+      transform $transition-time-slow,
+      top $transition-time-fast,
+      opacity $transition-time-fast;
+  }
+
+  &__line {
+    // middle line
+    display: block;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: $middle-width;
+  }
+
+  &__icon {
+    display: block;
+    width: $burger-width;
+    height: 20px;
+    position: relative;
+
+    &::before {
+      // top line
+      top: 0;
+      width: $top-width;
+    }
+
+    &::after {
+      // bottom line
+      bottom: 0;
+      width: $bottom-width   
+    }
+  }
+
+  &--active {
+    &:hover,
+    &:focus {
+      
+    }
+
+    #{$block}__line {
+      opacity: 0;
+    }
+
+    // turn burger icon into a cross
+    #{$block}__icon {
+      &::before,
+      &::after {
+        top: 50%;
+        width: 100%;
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

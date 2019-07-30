@@ -19,9 +19,9 @@
   text-decoration: none;
 
   transition:
-    background-color $transition-time,
-    border-color $transition-time,
-    color $transition-time;
+    background-color $transition-time-fast,
+    border-color $transition-time-fast,
+    color $transition-time-fast;
 
   &:hover,
   &:focus {

@@ -1,15 +1,10 @@
 //- Все примеси в этом файле должны начинаться c имени блока (logo)
 
-mixin logo(href, mods)
+mixin logo(mods)
 
   //- Принимает:
-  //-   href  {string} - ссылка логотипа
   //-   mods  {string} - список модификаторов
-  //- Вызов:
-        +logo('/')
-          img(src='img/logo.svg', alt='Logo', width='64', height='15')
-        +logo(false, 'mod')
-          img(src='img/logo.svg', alt='Logo', width='64', height='15')
+  
   -
     // список модификаторов
     var allMods = '';
@@ -20,5 +15,7 @@ mixin logo(href, mods)
       }
     }
 
-  a.logo(class=allMods, href=href)&attributes(attributes)
-    img.logo__image(src='img/logo.svg', alt='HMD Construction Group')
+  a.logo(class=allMods, href='/')&attributes(attributes)
+    svg.logo__image(width=57 height=30)
+      title HMD Construction Group
+      use(xlink:href="img/sprite.svg#logo")

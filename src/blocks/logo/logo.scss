@@ -6,9 +6,6 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  display: inline-block;
-  white-space: nowrap;
-
   &:hover,
   &:focus {
     outline: 0;
@@ -20,8 +17,10 @@
 
   &__image {
     display: block;
+    width: 100%;
     border-radius: 50%;
     background-color: $logo-bg-color;
+    fill: $sand;
     
     transition: background-color 0.3s;
   }

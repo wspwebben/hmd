@@ -6,21 +6,16 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  $vertical-padding: 1.625rem;
+  $vertical-padding: 0.625rem;
 
   background-color: $white;
+  position: relative;
 
   &__inner {
     @include inner();
+    display: flex;
     padding-top: $vertical-padding;
     padding-bottom: $vertical-padding;
-
-    display: flex;
-    align-items: center;
-  }
-
-  &__logo {
-    margin-right: 1.25rem;
   }
 
   &__menu {

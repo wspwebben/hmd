@@ -30,6 +30,31 @@
   background-color: transparent;
   cursor: pointer;
 
+  &--overlay {
+    &::before {
+      content: "";
+      position: fixed;
+      z-index: $zindex-low;
+      top: 100px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background: rgba($black, $opacity);
+  
+      opacity: 0;
+      visibility: hidden;
+  
+      transition: opacity $transition-time-fast;
+    }
+
+    &.js-burger--active {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
   &:hover,
   &:focus {
     outline: 0;
@@ -85,7 +110,7 @@
     }
   }
 
-  &--active {
+  &.js-burger--active {
     &:hover,
     &:focus {
       

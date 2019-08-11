@@ -1,13 +1,33 @@
-const menu = document.querySelector('.main-nav');
-const menuToggle = menu.querySelector('.main-nav__toggle');
-const menuWrapper = menu.querySelector('.main-nav__wrapper');
+const menu = document.querySelector('.js-menu');
+const toggle = menu.querySelector('.js-menu__toggle');
+const wrapper = menu.querySelector('.js-menu__wrapper');
 
 const openClass = 'main-nav__wrapper--open';
+let isMenuOpen = false;
 
-menuWrapper.classList.add(openClass);
-menuWrapper.style.maxHeight = `${menuWrapper.clientHeight}px`;
-menuWrapper.classList.remove(openClass);
+wrapper.classList.add(openClass);
+wrapper.style.maxHeight = `${wrapper.clientHeight}px`;
+wrapper.classList.remove(openClass);
 
-menuToggle.addEventListener('click', function() {
-  menuWrapper.classList.toggle(openClass)
+function openMenu() {
+  isMenuOpen = true;
+  wrapper.classList.add(openClass)
+  document.addEventListener('keydown', escapeKeydownHandler);
+}
+
+function closeMenu() {
+  isMenuOpen = false;
+  wrapper.classList.remove(openClass)
+  document.removeEventListener('keydown', escapeKeydownHandler);
+}
+
+function escapeKeydownHandler({ key }) {
+  if (key === 'Escape') {
+    // is needed to trigger burger close
+    toggle.click();  
+  }
+}
+
+toggle.addEventListener('click', function() {
+  isMenuOpen ? closeMenu() : openMenu();
 });

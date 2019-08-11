@@ -1,23 +1,8 @@
-//- Все примеси в этом файле должны начинаться c имени блока (burger)
-
-mixin burger(text, mods)
-
-  //- Принимает:
-  //-   text    {string} - текст
-  //-   mods    {string} - список модификаторов
-  //- Вызов:
-        +burger('Текст', 'some-mod')
-
+mixin burger(mods)
   -
-    // список модификаторов
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' burger--' + modsList[i].trim();
-      }
-    }
+    const modList = mods ? mods.split(' ') : [];
+    const allMods = modList.reduce((classname, mod) => classname + `burger--${mod}`, '')
 
-  button.burger(class=allMods)&attributes(attributes)
+  button.burger.js-burger(class=allMods)&attributes(attributes)
     span.burger__icon
       span.burger__line

@@ -3,9 +3,10 @@
 
 
 mixin main-nav()
-  nav.main-nav&attributes(attributes)
-    +burger().main-nav__toggle
-    .main-nav__wrapper
+  nav.main-nav.js-menu&attributes(attributes)
+    +burger('overlay').main-nav__toggle.js-menu__toggle
+    .main-nav__wrapper.js-menu__wrapper
+      span.main-nav__overlay.js-menu__close
       ul.main-nav__list
         each menuItem, name in pages
           +main-nav-item(menuItem, name)

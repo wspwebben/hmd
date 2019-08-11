@@ -5,17 +5,22 @@
   $link-color: $black;
   $link-color-active: $color-primary;
 
+
   &__wrapper {
     position: absolute;
+    z-index: $zindex-high;
     top: 100%;
     left: 0;
     right: 0;
     overflow: hidden;
     background-color: $white;
     transition: max-height $transition-time-fast;
-
+    text-align: center;
+    visibility: visible;
+    
     &:not(.main-nav__wrapper--open) {
       max-height: 0 !important;
+      visibility: hidden;
     }
   }
 
@@ -47,10 +52,15 @@
   }
 
   &__call {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__contact {
-
+    display: block;
+    width: calc(100% - #{$gutter * 2});
+    margin: 0 auto;
+    margin-bottom: $gutter * 1.5;
   }
 }

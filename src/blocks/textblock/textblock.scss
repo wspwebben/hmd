@@ -3,87 +3,141 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .textblock {
-
-  $block-name:                &; // #{$block-name}__element
-
-  $shift: 60px;
-  $image-gap: 3rem;
-
-  overflow: hidden;
-  padding-bottom: $shift;
-
-  &--reverse {
-    #{$block-name}__inner {
-      flex-direction: row-reverse;
-
-      &::before {
-        left: $gutter + $shift;
-        right: auto;
-      }
-    }
-
-    #{$block-name}__wrapper {
-      margin-right: 0;
-      margin-left: $image-gap;
-    }
-  }
-
-  &--top-shift {
-    padding-top: $shift;
-    padding-bottom: 0;
-
-    #{$block-name}__image-wrapper {
-      top: auto;
-      bottom: $shift;
-    }
-  }
-
-  &--with-image {
-    #{$block-name}__wrapper {
-      max-width: 50%;
-    }
-  }
-
+  $shift: 40px;
+  
   &__inner {
     @include inner();
 
     position: relative;
     display: flex;
-    align-items: center;
-    
+    flex-direction: column;
+    padding-top: $gutter;
+
+  }
+
+  &__image-wrapper {
+    order: -1;
+  }
+
+  &__image {
+    @include round-borders($border-radius-mobile);
+    display: block;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 2.25rem 0;
+
     &::before {
       content: "";
       position: absolute;
       z-index: -1;
-      top: 0;
+      
+      top: -$shift;
+      left: -$gutter;
+      right: -$gutter;
       bottom: 0;
-      right: $gutter + $shift;
-      width: 100vw;
+
       background-color: $white;
     }
   }
 
-  &__wrapper {
-    margin-right: $image-gap;
-    padding: 3rem 0;
-  }
-
   &__title {
-    margin-top: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
   }
 
   &__text {
-    margin-bottom: 0;
+    margin: 0;
   }
+}
 
-  &__image-wrapper {
-    position: relative;
-    top: $shift;
-  }
 
-  &__image {
-    @include round-borders(30px);
+@media (min-width: $screen-desktop) {
+  .textblock {
+    $block-name:                &; // #{$block-name}__element
+    
+    $shift: 60px;
+    $image-gap: 3rem;
 
-    display: block;
+    overflow: hidden;
+    padding-bottom: $shift;
+
+    &--reverse {
+      #{$block-name}__inner {
+        flex-direction: row-reverse;
+
+        &::before {
+          left: $gutter + $shift;
+          right: auto;
+        }
+      }
+
+      #{$block-name}__wrapper {
+        margin-right: 0;
+        margin-left: $image-gap;
+      }
+    }
+
+    &--top-shift {
+      padding-top: $shift;
+      padding-bottom: 0;
+
+      #{$block-name}__image-wrapper {
+        top: auto;
+        bottom: $shift;
+      }
+    }
+
+    &--with-image {
+      #{$block-name}__wrapper {
+        max-width: 50%;
+      }
+    }
+
+    &__inner {
+      @include inner();
+
+      position: relative;
+      display: flex;
+      align-items: center;
+      
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        right: $gutter + $shift;
+        width: 100vw;
+        background-color: $white;
+      }
+    }
+
+    &__wrapper {
+      margin-right: $image-gap;
+      padding: 3rem 0;
+    }
+
+    &__title {
+      margin-top: 0;
+    }
+
+    &__text {
+      margin-bottom: 0;
+    }
+
+    &__image-wrapper {
+      position: relative;
+      top: $shift;
+    }
+
+    &__image {
+      @include round-borders(30px);
+
+      display: block;
+    }
   }
 }

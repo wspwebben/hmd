@@ -3,8 +3,29 @@
 // Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
 
 .textblock {
+  $block-name: &;
+
   $shift: 40px;
   
+  &--background {
+    #{$block-name}__wrapper {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        
+        top: -$shift;
+        left: -$gutter;
+        right: -$gutter;
+        bottom: 0;
+  
+        background-color: $white;
+      }
+    }  
+  }
+
   &__inner {
     @include inner();
 
@@ -25,21 +46,8 @@
   }
 
   &__wrapper {
-    position: relative;
     padding: 2.25rem 0;
 
-    &::before {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      
-      top: -$shift;
-      left: -$gutter;
-      right: -$gutter;
-      bottom: 0;
-
-      background-color: $white;
-    }
   }
 
   &__title {
@@ -50,7 +58,21 @@
   }
 
   &__text {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: $text-color;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--light {
+      color: $text-color-light;
+    }
+
+    &--accent {
+      color: $text-color-accent;
+    }
   }
 }
 

@@ -9,7 +9,7 @@ $black:                       #000000;
 $gray-dark:                   #333333;
 $gray:                        #777777;
 $gray-light:                  #cfcfcf;
-$gray-lightest:               #e5e5e5;
+$gray-lightest:               #f9f9f9;
 $white:                       #ffffff;
 
 $color-primary:               $green;
@@ -20,7 +20,8 @@ $color-accent:                $green-light;
 
 $text-color:                  $gray-dark;
 $text-color-second:           $gray;
-$text-color-third:            $gray-light;
+$text-color-light:            $gray-light;
+$text-color-accent:                 $green;
 $body-bg:                     $gray-lightest;
 
 $logo-bg-color:               $green-dark;

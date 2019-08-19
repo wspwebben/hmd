@@ -1,9 +1,10 @@
 //- Все примеси в этом файле должны начинаться c имени блока (textblock)
 
-mixin textblock(imageSource, mods)
+mixin textblock(title, imageSource, mods)
 
   //- Принимает:
-  //-   imageSource {string} - путь к картинке, если не указан, текст
+  //-   title
+  //-   imageSource {string}
   //- Модификаторы:
   //-   reverse - поменять местами изображение и текст
   //-   top-shift - сдвинуть изображение вверх, а не вниз
@@ -17,10 +18,10 @@ mixin textblock(imageSource, mods)
   section.textblock(class=allMods)&attributes(attributes)
     .textblock__inner
       .textblock__wrapper
-        h1.textblock__title
-          block title
-        p.textblock__text
-          block text
+        if title 
+          h1.textblock__title= title
+        .textblock__text-content
+          block
       if imageSource
         .textblock__image-wrapper
           img.textblock__image(src=imageSource alt="" role="presentation")

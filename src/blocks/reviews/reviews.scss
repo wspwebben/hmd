@@ -1,0 +1,21 @@
+.reviews {
+  $block-name:                &; // #{$block-name}__element
+
+  &__inner {
+    @include inner();
+  }
+
+  &__list {
+    overflow: auto;
+    list-style: none;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    flex-shrink: 0;
+    max-width: 100%;
+  }
+}

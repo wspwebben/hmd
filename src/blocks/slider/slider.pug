@@ -1,0 +1,9 @@
+mixin slider(slides, mods)
+  -
+    const modList = mods ? mods.split(' ') : [];
+    const allMods = modList.reduce((classname, mod) => classname + `slider--${mod} `, '')
+
+  ul.slider(class=allMods)&attributes(attributes)
+    each slide in slides
+      li.slider__item
+        img(src = slide)

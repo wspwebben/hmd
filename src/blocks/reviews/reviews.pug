@@ -1,0 +1,10 @@
+mixin reviews(items)
+  .reviews(class=allMods)&attributes(attributes)
+    .reviews__inner
+      +slider(items.map(item => item.image), 'no-init no-arrows').reviews__slider.js-reviews__slider
+      h2.reviews__title Customer Testimonials
+      ul.reviews__list
+        each review in items
+          li.reviews__item
+            h3.reviews__caption= review.title
+            p.reviews__text= review.text

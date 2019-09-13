@@ -8,4 +8,13 @@ block meta
   meta(name='description', content='')
 
 block content
-  h1 Our Portfolio
+  .page__inner
+    - const tabsCaption = ['All', 'Section 1', 'Section 2', 'Section 3']
+    - const activeTab = 'All'
+    - const tabs = tabsCaption.map(tab => ({ caption: tab, isActive: tab === activeTab }));
+    +tabs(tabs)
+
+    - var card = 1;
+    while card <= 6
+      +card('Project ' + card)
+      - card += 1

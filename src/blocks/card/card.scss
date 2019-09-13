@@ -1,0 +1,9 @@
+.card {
+  $block-name:                &; // #{$block-name}__element
+
+  @include round-borders();
+
+  &__caption {
+    
+  }
+}

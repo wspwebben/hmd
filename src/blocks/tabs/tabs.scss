@@ -1,0 +1,38 @@
+.tabs {
+  $block-name: &;
+
+  background-color: $white;
+  color: $black;  
+  
+  @include round-borders();
+  overflow: auto;
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    $padding: 13px;
+    flex-shrink: 0;
+
+    padding: $padding $gutter;
+
+    &--active {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: $padding;
+        right: $padding;
+        bottom: 0;
+        height: 3px;
+
+        background-color: $color-primary;
+      }
+    }
+  }
+}

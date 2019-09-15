@@ -3,16 +3,17 @@
 
   @include round-borders();
 
+  overflow: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 228px;
   min-height: 290px;
   margin: 0 auto;
   padding: $gutter-big;
 
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: bottom center;
   background-color: rgba($black, 0.2);
   color: $white;
 
@@ -31,7 +32,7 @@
 
   &__caption {
     position: relative;
-    z-index: $zindex-medium;
+    z-index: $zindex-lowest;
     margin-top: auto;
     margin-bottom: 0;
 

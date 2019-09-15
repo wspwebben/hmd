@@ -34,7 +34,7 @@
     &::before {
       content: "";
       position: fixed;
-      z-index: $zindex-low;
+      z-index: $zindex-medium;
       top: 100px;
       bottom: 0;
       right: 0;

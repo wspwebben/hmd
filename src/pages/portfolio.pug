@@ -12,7 +12,8 @@ block content
     - const tabsCaption = ['All', 'Section 1', 'Section 2', 'Section 3']
     - const activeTab = 'All'
     - const tabs = tabsCaption.map(tab => ({ caption: tab, isActive: tab === activeTab }));
-    +tabs(tabs)
+    
+    +tabs(tabs).page__element
 
     - const cardsCount = 6;
     - const cardsImages = ['card1.jpg', 'card2.jpg', 'card3.jpg'];
@@ -22,5 +23,4 @@ block content
         image: cardsImages[i % cardsImages.length]
       }));
     
-    each card in cards
-      +card(card)
+    +card-grid(cards, true).page__element

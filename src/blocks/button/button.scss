@@ -1,17 +1,13 @@
-// В этом файле должны быть стили для БЭМ-блока button, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .button {
   @include round-borders();
 
   display: inline-block;
   background-color: $link-color;
   border: 1px solid $link-color;
-  padding: 13px 20px;
+  padding: 12px 20px;
   min-width: 160px;
   
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.5;
   color: $white;
   cursor: pointer;
@@ -48,6 +44,11 @@
     min-width: 260px;
     font-size: 1.125rem;
     padding: 18px 80px;
+  }
+
+  &--full {
+    display: block;
+    width: 100%;
   }
 
   &--transparent {

@@ -1,5 +1,5 @@
 mixin tabs(items)
-  .tabs
+  .tabs&attributes(attributes)
     ul.tabs__list
       each item in items 
         - tabs[0].isActive = tabs.every(tab => !tab.isActive) ? true : tabs[0].isActive;

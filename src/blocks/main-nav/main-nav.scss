@@ -61,6 +61,6 @@
     display: block;
     width: calc(100% - #{$gutter * 2});
     margin: 0 auto;
-    margin-bottom: $gutter * 1.5;
+    margin-bottom: $gutter-big;
   }
 }

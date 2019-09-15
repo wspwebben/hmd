@@ -14,7 +14,13 @@ block content
     - const tabs = tabsCaption.map(tab => ({ caption: tab, isActive: tab === activeTab }));
     +tabs(tabs)
 
-    - var card = 1;
-    while card <= 6
-      +card('Project ' + card)
-      - card += 1
+    - const cardsCount = 6;
+    - const cardsImages = ['card1.jpg', 'card2.jpg', 'card3.jpg'];
+    - 
+      const cards = new Array(cardsCount).fill().map((_, i) => ({
+        caption: `Project ${i + 1}`,
+        image: cardsImages[i % cardsImages.length]
+      }));
+    
+    each card in cards
+      +card(card)

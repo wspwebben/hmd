@@ -3,7 +3,40 @@
 
   @include round-borders();
 
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 228px;
+  min-height: 290px;
+  margin: 0 auto;
+  padding: $gutter-big;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba($black, 0.2);
+  color: $white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    // background-image: linear-gradient(rgba($black, 0.8), transparent);
+    background: linear-gradient(to top, rgba($black, 0.8) 0%, transparent 35%);
+
+  }
+
   &__caption {
-    
+    position: relative;
+    z-index: $zindex-medium;
+    margin-top: auto;
+    margin-bottom: 0;
+
+    font-size: 1.25rem;
+    font-weight: normal;
+    line-height: 1.4;
   }
 }

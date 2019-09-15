@@ -1,4 +1,4 @@
-mixin card(caption)
+mixin card(card)
+  .card(style=`background-image: url(img/${card.image})`)
+    h3.card__caption= card.caption
 
-  .card
-    h3.card__caption= caption

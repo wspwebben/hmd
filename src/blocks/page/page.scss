@@ -28,6 +28,14 @@
   &__element {
     margin-top: 0;
     margin-bottom: $gutter-big;
+
+    &--spacer {
+      margin-bottom: calc(#{$gutter * 2} + 1rem);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__footer-wrapper {

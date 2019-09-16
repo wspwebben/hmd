@@ -1,10 +1,10 @@
-mixin input(label, mods)
+mixin input(classname, label, mods)
   -
     const element = 'input';
     const modList = mods ? mods.split(' ') : [];
     const allMods = modList.map(mod => `${element}--${mod}`).join(' ');
 
-  label.input
+  label.input(class=`${allMods} ${classname}`)
     if label
       span.input__label= label
     input.input__field&attributes(attributes)

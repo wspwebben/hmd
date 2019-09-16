@@ -1,0 +1,11 @@
+mixin input(label, mods)
+  -
+    const element = 'input';
+    const modList = mods ? mods.split(' ') : [];
+    const allMods = modList.map(mod => `${element}--${mod}`).join(' ');
+
+  label.input
+    if label
+      span.input__label= label
+    input.input__field&attributes(attributes)
+    span.input__marker

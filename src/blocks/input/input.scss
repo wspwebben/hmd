@@ -1,0 +1,67 @@
+.input {
+  $this: &;
+
+  display: block;
+  position: relative;
+
+  &__label {
+    display: none;
+    // currently no design
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding: 0.75rem $gutter-small;
+    border: none;
+    
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $black;
+    text-decoration: none;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $text-color-second;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+
+      + .input__marker {
+        &::after {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    &:disabled,
+    &--disabled {
+      // TODO: add disabled styles
+    }
+  }
+
+  &__marker {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: $text-color-third;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: $link-color;
+
+      transform: translateX(-100%);
+      transition: transform $transition-time-fast;
+    }
+  }
+}

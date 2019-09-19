@@ -13,7 +13,7 @@
 
   &__content {
     padding: $gutter 0;
-    padding-bottom: calc(#{$gutter * 2} + 1rem);
+    padding-bottom: $gutter-spacer;
     flex-grow: 1;
   }
 
@@ -22,8 +22,11 @@
   }
 
   &__title {
-    margin-top: 0;
-    margin-bottom: 0.5em;;
+    @include title();
+  }
+
+  &__text {
+    @include text();
   }
 
   &__element {
@@ -31,7 +34,7 @@
     margin-bottom: $gutter-big;
 
     &--spacer {
-      margin-bottom: calc(#{$gutter * 2} + 1rem);
+      margin-bottom: $gutter-spacer;
     }
 
     &:last-child {

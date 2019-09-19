@@ -54,6 +54,7 @@ $font-family--monospace:     SFMono-Regular, Menlo, Monaco, Consolas, Liberation
 $gutter: 20px;
 $gutter-small: $gutter * 0.5;
 $gutter-big: $gutter * 1.5;
+$gutter-spacer: calc(#{$gutter * 2} + 1rem);
 
 $screen-mobile:               320px;
 $screen-tablet:               768px;

@@ -8,4 +8,19 @@ block meta
   meta(name='description', content='')
 
 block content
-  h1 Services
+  .page__inner
+    h1.page__title HMD Construction Group
+    p.page__text.page__element
+      | Established in 1984, New Outlooks Construction Group has earned a reputation as one of Central Jersey's Premier.
+      | Design / Build / Remodeling Firms over the past 30 years.
+
+    -
+      const serviceTitles = ['Kitchen Remodeling', 'Basement Remodelling', 'Bathroom Remodelling',
+                        'Addition & Renovation', 'Handyman Remodelling', 'Commercial Remodelling']
+      const serviceImages = ['service1.jpg', 'service2.jpg', 'service3.jpg'];
+      const totalImages = serviceImages.length;
+
+    each title, index in serviceTitles
+      +service(title, `img/${serviceImages[index % totalImages]}`)
+        block text
+          | lorem ipsum

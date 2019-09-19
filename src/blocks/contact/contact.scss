@@ -3,16 +3,12 @@
 
   &__title {
     @include title();
-    margin-bottom: 1rem;
     text-align: center;
-    color: $text-color;
   }
 
   &__description {
-    @include font-family("Roboto");
     @include text();
     text-align: center;
-    color: $text-color-second;
   }
 
   &__field {

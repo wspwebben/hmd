@@ -1,14 +1,10 @@
-// В этом файле должны быть стили для БЭМ-блока hmd-header, его элементов,
-// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
-// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
-
 .hmd-header {
 
   $block-name:                &; // #{$block-name}__element
 
   $vertical-padding: 0.625rem;
 
-  background-color: $white;
+  background-color: $alternate-bg;
   position: relative;
 
   &__inner {

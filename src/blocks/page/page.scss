@@ -13,6 +13,7 @@
 
   &__content {
     padding: $gutter 0;
+    padding-bottom: calc(#{$gutter * 2} + 1rem);
     flex-grow: 1;
   }
 

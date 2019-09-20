@@ -32,6 +32,14 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    &--accent {
+      color: $color-primary;
+    }
+
+    &--light {
+      color: $text-color-third;
+    }
   }
 
   &__element {

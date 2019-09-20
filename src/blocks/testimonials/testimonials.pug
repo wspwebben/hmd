@@ -1,0 +1,15 @@
+mixin testimonials(reviews)
+  - const review = reviews[0];
+
+  .testimonials&attributes(attributes)
+    .testimonials__inner
+      img(src= review.image, alt= `Picture from ${review.name}`).testimonials__image
+      h2.testimonials__title Customer testimonial
+      
+      .testimonials__wrapper
+        b.testimonials__name= review.name
+        p.testimonials__text= review.text
+
+
+
+

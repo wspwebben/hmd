@@ -18,7 +18,7 @@ block content
       | Fail most room even gone her end like. Comparison dissimilar unpleasant six compliment two unpleasing any add. 
       | Ashamed my company thought wishing colonel it prevent he in. Pretended residence are something far engrossed old off. 
 
-  .page__inner
+  .page__inner.page__element.page__element--spacer  
     .page__element.page__element--spacer
       h2.page__title Our Philosophy
       p.page__text
@@ -40,6 +40,19 @@ block content
         text: advantageText,
       });
 
-    +list(advantages).page__element.page__element--spacer
+    +list(advantages)
 
+    -
+      const testimonialsClient = ['John & Martha Greenwald', 'John John', 'Mrs. Claus'];
+      const testimonialsImages = ['https://picsum.photos/id/987/320/180', 'https://picsum.photos/id/604/320/180', 'https://picsum.photos/id/837/320/180'];
+      const testimonialsText = 'We will not hesitate to call on you in the future. We were very pleased with your pricing, scheduling, and workmanship. You were most cooperative making adjustments or corrections when needed. We appreciated your flexibility and attention.';
+      const testimonials = testimonialsClient.map((name, index) => ({
+        name,
+        image: `${testimonialsImages[index % testimonialsImages.length]}`,
+        text: testimonialsText,
+      }));
+
+  +testimonials(testimonials).page__element.page__element--spacer
+
+  .page__inner
     +contact().page__element

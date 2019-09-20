@@ -21,7 +21,7 @@
   &__title {
     @include subtitle();
     position: relative;
-    margin-bottom: calc(#{$gutter} + 1rem);
+    margin-bottom: $gutter-gap;
     color: inherit;
   }
 

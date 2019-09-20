@@ -21,6 +21,6 @@
   }
 
   &__more {
-    margin-top: calc(#{$gutter} + 1rem);
+    margin-top: $gutter-gap;
   }
 }

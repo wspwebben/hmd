@@ -1,0 +1,8 @@
+mixin advantages()
+  .advantages&attributes(attributes)
+    h2.visually-hidden advantages
+    ul.advantages__list
+      each item in advantages
+        li.advantages__item
+          h3.advantages__title= item.title
+          p.advantages__text= item.text

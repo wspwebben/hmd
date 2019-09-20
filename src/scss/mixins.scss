@@ -24,6 +24,24 @@
   padding: 0;
 }
 
+@mixin underline($width: auto, $color: currentColor) {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 0.2rem;
+    width: $width;
+    margin: 0 auto;
+
+    background-color: $color;
+  }
+}
+
 @mixin title() {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -37,6 +55,7 @@
   
   color: $black;
   font-size: 1.25rem;
+  font-weight: normal;
   line-height: 1.4;
 }
 

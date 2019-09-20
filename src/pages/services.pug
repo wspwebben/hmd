@@ -25,4 +25,18 @@ block content
         text: 'lorem ipsum',      
       }));
 
-    +grid(services, 'service').page__element
+    +grid(services, 'service').page__element.page__element--spacer
+    
+    -
+      const advantageCount = 3;
+      const advantageTitle = 'Advantage'
+      const advantageText = `
+        Far curiosity incommode now led smallness allowance. Favour bed assure son things yet.
+        She consisted consulted elsewhere happiness disposing household any old the.
+      `;
+      const advantages = new Array(advantageCount).fill({
+        title: advantageTitle,
+        text: advantageText,
+      });
+
+    +advantages(advantages).page__element

@@ -1,0 +1,30 @@
+.advantages {
+  @include round-borders(20px);
+
+  padding: $gutter-big   $gutter;
+  background-color: $alternate-bg;
+
+  &__list {
+    @include list();
+  }
+
+  &__item {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__title {
+    @include subtitle();
+    @include underline(3.75rem, $color-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  &__text {
+    @include text();
+    margin-bottom: 0;
+  }
+}

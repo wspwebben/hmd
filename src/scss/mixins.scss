@@ -18,6 +18,12 @@
   }
 }
 
+@mixin list() {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 @mixin title() {
   margin-top: 0;
   margin-bottom: 1rem;

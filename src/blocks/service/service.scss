@@ -1,6 +1,6 @@
 .service {
 
-  @include round-borders();
+  @include round-borders(20px);
 
   position: relative;
   overflow: hidden;

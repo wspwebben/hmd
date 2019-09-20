@@ -1,7 +1,7 @@
 .card {
   $block-name:                &; // #{$block-name}__element
 
-  @include round-borders();
+  @include round-borders(20px);
 
   overflow: hidden;
   position: relative;

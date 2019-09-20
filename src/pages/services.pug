@@ -19,8 +19,10 @@ block content
                         'Addition & Renovation', 'Handyman Remodelling', 'Commercial Remodelling']
       const serviceImages = ['service1.jpg', 'service2.jpg', 'service3.jpg'];
       const totalImages = serviceImages.length;
+      const services = serviceTitles.map((title, index) => ({
+        title,
+        image: `img/${serviceImages[index % totalImages]}`,
+        text: 'lorem ipsum',      
+      }));
 
-    each title, index in serviceTitles
-      +service(title, `img/${serviceImages[index % totalImages]}`)
-        block text
-          | lorem ipsum
+    +grid(services, 'service').page__element

@@ -1,9 +1,0 @@
-mixin card-grid(cards, moreButton)
-  .card-grid&attributes(attributes)
-    ul.card-grid__list
-      each card in cards
-        li.card-grid__card
-          +card(card)
-
-    if moreButton
-      +button('More', 'transparent full')

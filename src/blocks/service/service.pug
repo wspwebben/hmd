@@ -1,7 +1,7 @@
-mixin service(title, image)
-  .service(class=allMods, style=`background-image:url(${image})`)&attributes(attributes)
-    h2.service__title= title
-    p.service__text
-      block text
+mixin service(service)
+  .service(class=allMods, style=`background-image: url(${service.image})`)
+    h2.service__title= service.title
+    if service.text
+      p.service__text= service.text
     svg.service__arrow(viewBox="0 0 20 9")
       use(xlink:href="img/sprite.svg#arrow")

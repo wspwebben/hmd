@@ -1,0 +1,14 @@
+mixin grid(items, formatter, moreButton, mods)
+  -
+    const element = 'grid';
+    const modList = mods ? mods.split(' ') : [];
+    const allMods = modList.map(mod => `${element}--${mod}`).join(' ');
+
+  .grid(class=allMods)&attributes(attributes)
+    ul.grid__list
+      each item in items
+        li.grid__item
+          +#{formatter}(item)
+
+    if moreButton
+      +button('More', 'transparent full').grid__more

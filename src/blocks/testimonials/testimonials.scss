@@ -1,4 +1,5 @@
 .testimonials {
+  $this: &;
   $image-height: 180px;
 
   position: relative;
@@ -17,6 +18,7 @@
 
   &__inner {
     @include inner();
+    padding-bottom: $gutter;
   }
 
   &__image {
@@ -26,6 +28,46 @@
   }
 
   &__wrapper {
-    padding: $gutter-gap 0;
+    padding-top: $gutter-gap;
+  }
+
+  &__title {
+    @include title();
+  }
+
+  &__test {
+    @include text();
+  }
+
+  &__controls {
+    display: flex;
+    margin-top: $gutter;
+  }
+
+  &__control {
+    flex-grow: 1;
+    padding: 1rem 2.5rem;
+    border: 0;
+    background-color: transparent;
+    text-align: left;
+    
+    &:hover,
+    &:focus {
+      outline: 0;
+    }
+
+    &--prev {
+      text-align: right;
+
+      #{$this}__arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__arrow {
+    width: 2em;
+    height: 1em;  
+    font-size: 1rem;
   }
 }

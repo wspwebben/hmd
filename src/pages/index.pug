@@ -49,7 +49,22 @@ block content
 
     h2.page__title Check our Projects
     +button('See All', 'small arrow')(href="/portfolio.html")
-  +inline-slider(cards)
+  +inline-slider(cards).page__element.page__element--spacer
+
+  -
+    const testimonialsClient = ['John & Martha Greenwald', 'John John', 'Mrs. Claus'];
+    const testimonialsImages = ['https://picsum.photos/id/987/320/180', 'https://picsum.photos/id/604/320/180', 'https://picsum.photos/id/837/320/180'];
+    const testimonialsText = 'We will not hesitate to call on you in the future. We were very pleased with your pricing, scheduling, and workmanship. You were most cooperative making adjustments or corrections when needed. We appreciated your flexibility and attention.';
+    const testimonials = testimonialsClient.map((name, index) => ({
+      name,
+      image: `${testimonialsImages[index % testimonialsImages.length]}`,
+      text: testimonialsText,
+    }));
+
+  +testimonials(testimonials).page__element.page__element--spacer
+
+  .page__inner
+    +contact().page__element
 
 
 //- block append page-bottom

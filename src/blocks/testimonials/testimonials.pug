@@ -10,6 +10,8 @@ mixin testimonials(reviews)
         b.testimonials__name= review.name
         p.testimonials__text= review.text
 
-
-
-
+      .testimonials__controls
+          button.testimonials__control.testimonials__control--prev
+            +arrow().testimonials__arrow
+          button.testimonials__control.testimonials__control--next
+            +arrow().testimonials__arrow

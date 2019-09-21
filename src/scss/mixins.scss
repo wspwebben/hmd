@@ -5,9 +5,10 @@
   padding: 0 $gutter;
 }
 
-@mixin round-borders($radius: $border-radius) {
-  border-top-right-radius: $radius;
-  border-bottom-left-radius: $radius;
+@mixin round-borders($radius: $border-radius, $directions: ('top-right', 'bottom-left')) {
+  @each $direction in $directions {
+    border-#{$direction}-radius: $radius;
+  }
 }
 
 @mixin font-family($family: "Lora") {

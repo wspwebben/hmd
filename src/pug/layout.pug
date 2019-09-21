@@ -6,7 +6,12 @@ include mixins.pug
 include website_map.data.pug
 
 block vars
-  - let page = 'index'
+  -
+    let page = 'index';
+
+    const noPaddingPages = ['index'];
+    const contentClass = 'page__content';
+    const contentMods = noPaddingPages.includes(page) ? `${contentClass}--no-padding` : '';
 
 doctype html
 html(class='page no-js', lang='ru')
@@ -44,7 +49,8 @@ html(class='page no-js', lang='ru')
 
     +page-header()
 
-    main.page__content
+
+    main.page__content(class= contentMods)
       +breadcrumbs()
 
       block content

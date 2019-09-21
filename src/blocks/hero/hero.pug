@@ -1,6 +1,6 @@
 mixin hero(slides)
 
-  .hero
+  .hero&attributes(attributes)
     each slide in slides
       img.hero__image(src= slide.image, role='presentation', alt='')
     .hero__inner

@@ -28,6 +28,10 @@
   &__title {
     @include title();
     text-transform: capitalize;
+
+    &--center {
+      text-align: center;
+    }
   }
 
   &__text {
@@ -44,11 +48,19 @@
     &--light {
       color: $text-color-third;
     }
+
+    &--center {
+      text-align: center;
+    }
   }
 
   &__element {
     margin-top: 0;
     margin-bottom: $gutter-big;
+
+    &--gap {
+      margin-bottom: $gutter-gap;
+    }
 
     &--spacer {
       margin-bottom: $gutter-spacer;

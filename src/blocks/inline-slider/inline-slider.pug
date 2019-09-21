@@ -1,0 +1,5 @@
+mixin inline-slider(slides)
+  .inline-slider
+    .inline-slider__track
+      each slide in slides
+        +card(slide).inline-slider__item

@@ -1,0 +1,17 @@
+.inline-slider {
+
+  overflow: auto;
+
+  &__track {
+    display: flex;
+  }
+  
+  &__item {
+    flex-shrink: 0;
+    min-width: 15rem;
+
+    &:not(:last-child) {
+      margin-right: $gutter;
+    }
+  }
+}

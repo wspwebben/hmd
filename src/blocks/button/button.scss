@@ -5,7 +5,7 @@
   background-color: $link-color;
   border: 1px solid $link-color;
   padding: 12px 20px;
-  min-width: 160px;
+  min-width: 10em;
   
   font-size: 1rem;
   line-height: 1.5;
@@ -40,10 +40,15 @@
     color: rgba($gray, $opacity);
   }
 
+  &--small {
+    font-size: 0.75rem;
+    padding: 0.7em 2em;
+  }
+
   &--big {
     min-width: 260px;
     font-size: 1.125rem;
-    padding: 18px 80px;
+    padding: 1em 4em;
   }
 
   &--full {
@@ -60,6 +65,7 @@
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
+    min-width: 11.5em;
     text-align: left;
   }
 

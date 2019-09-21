@@ -18,7 +18,39 @@ block content
       text: heroText,
     }))
 
-  +hero(heroSlides)
+  +hero(heroSlides).page__element.page__element--spacer
+
+  .page__inner.page__element
+    h1.page__title.page__title--center HMD Construction Group
+    p.page__text.page__text--center.page__element.page__element--gap
+      | Established in 1984, New Outlooks Construction Group has earned a reputation as one of Central Jersey's Premier.
+      | Design / Build / Remodeling Firms over the past 30 years.
+
+    -
+      const serviceTitles = ['Kitchen Remodeling', 'Basement Remodelling', 'Bathroom Remodelling',
+                        'Addition & Renovation', 'Handyman Remodelling', 'Commercial Remodelling']
+      const serviceImages = ['service1.jpg', 'service2.jpg', 'service3.jpg'];
+      const totalImages = serviceImages.length;
+      const services = serviceTitles.map((title, index) => ({
+        title,
+        image: `img/${serviceImages[index % totalImages]}`,
+        text: 'lorem ipsum',      
+      }));
+
+    +grid(services, 'service').page__element.page__element--spacer
+
+    -
+      const cardsCount = 5;
+      const cardsImages = ['card1.jpg', 'card2.jpg', 'card3.jpg'];
+      const cards = new Array(cardsCount).fill().map((_, i) => ({
+        caption: `Project ${i + 1}`,
+        image: cardsImages[i % cardsImages.length]
+      }));
+
+    h2.page__title Check our Projects
+    +button('See All', 'small arrow')(href="/portfolio.html")
+  +inline-slider(cards)
+
 
 //- block append page-bottom
 //-   script(src='js/some.js')

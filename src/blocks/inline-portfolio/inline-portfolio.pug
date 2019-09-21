@@ -1,0 +1,17 @@
+mixin inline-portfolio(title, withLink)
+
+  -
+    const cardsCount = 5;
+    const cardsImages = ['card1.jpg', 'card2.jpg', 'card3.jpg'];
+    const cards = new Array(cardsCount).fill().map((_, i) => ({
+      caption: `Project ${i + 1}`,
+      image: cardsImages[i % cardsImages.length]
+    }));
+
+  .inline-portfolio&attributes(attributes)
+    .inline-portfolio__inner
+      h2.inline-portfolio__title= title
+      if withLink
+        +button('See All', 'small arrow')(href="/portfolio.html").inline-portfolio__link
+
+    +inline-slider(cards)

@@ -1,0 +1,14 @@
+.inline-portfolio {
+
+  &__inner {
+    @include inner();
+  }
+
+  &__title {
+    @include title();
+  }
+
+  &__link {
+    margin-bottom: $gutter-gap;
+  }
+}

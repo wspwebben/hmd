@@ -39,21 +39,11 @@ block content
 
     +grid(services, 'service').page__element.page__element--spacer
 
-    -
-      const cardsCount = 5;
-      const cardsImages = ['card1.jpg', 'card2.jpg', 'card3.jpg'];
-      const cards = new Array(cardsCount).fill().map((_, i) => ({
-        caption: `Project ${i + 1}`,
-        image: cardsImages[i % cardsImages.length]
-      }));
-
-    h2.page__title Check our Projects
-    +button('See All', 'small arrow')(href="/portfolio.html")
-  +inline-slider(cards).page__element.page__element--spacer
+  +inline-portfolio('Check our Projects', true).page__element.page__element--spacer
 
   -
     const testimonialsClient = ['John & Martha Greenwald', 'John John', 'Mrs. Claus'];
-    const testimonialsImages = ['https://picsum.photos/id/987/320/180', 'https://picsum.photos/id/604/320/180', 'https://picsum.photos/id/837/320/180'];
+    const testimonialsImages = ['img/testimonials1.jpg', 'https://picsum.photos/id/604/320/180', 'https://picsum.photos/id/837/320/180'];
     const testimonialsText = 'We will not hesitate to call on you in the future. We were very pleased with your pricing, scheduling, and workmanship. You were most cooperative making adjustments or corrections when needed. We appreciated your flexibility and attention.';
     const testimonials = testimonialsClient.map((name, index) => ({
       name,

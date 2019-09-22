@@ -23,8 +23,6 @@
 
   &__image {
     @include round-borders(20px);
-    display: block;
-    width: 100%;
     margin-bottom: $gutter-gap;
   }
 

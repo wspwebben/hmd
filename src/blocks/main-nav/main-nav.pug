@@ -9,7 +9,8 @@ mixin main-nav()
       span.main-nav__overlay.js-menu__close
       ul.main-nav__list
         each menuItem, name in pages
-          +main-nav-item(menuItem, name)
+          if menuItem.inMenu
+            +main-nav-item(menuItem, name)
       +call().main-nav__call
       +button('Contact Us').main-nav__contact
 

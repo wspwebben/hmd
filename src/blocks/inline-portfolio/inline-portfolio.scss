@@ -6,6 +6,11 @@
 
   &__title {
     @include title();
+    margin-bottom: 1rem;
+
+    &--gap {
+      margin-bottom: $gutter-gap;
+    }
   }
 
   &__link {

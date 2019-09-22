@@ -10,7 +10,7 @@ mixin inline-portfolio(title, withLink)
 
   .inline-portfolio&attributes(attributes)
     .inline-portfolio__inner
-      h2.inline-portfolio__title= title
+      h2.inline-portfolio__title(class= withLink ? '' : 'inline-portfolio__title--gap' )= title
       if withLink
         +button('See All', 'small arrow')(href="/portfolio.html").inline-portfolio__link
 

@@ -25,6 +25,11 @@
     @include inner();
   }
 
+  &__image {
+    @include round-borders(20px);
+    display: block;
+  }
+
   &__title {
     @include title();
     text-transform: capitalize;
@@ -51,6 +56,27 @@
 
     &--center {
       text-align: center;
+    }
+
+    &--list {
+      margin-bottom: 1.5rem;
+      font-size:  0.875rem;
+      line-height: 1.3;
+    }
+  }
+
+  &__inline-list {
+    display: inline-flex;
+    color: inherit;
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        background-color: currentColor;
+        margin: 0 $gutter;
+      }
     }
   }
 

@@ -3,4 +3,7 @@ mixin service(service)
     h2.service__title= service.title
     if service.text
       p.service__text= service.text
-    +arrow().service__arrow
+    if service.link
+      a.service__link(href= service.link)
+        +arrow().service__arrow
+    

@@ -32,12 +32,24 @@
 
   &__caption {
     position: relative;
-    z-index: $zindex-lowest;
-    margin-top: auto;
+    z-index: $zindex-lowest;  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin-top: 0;
     margin-bottom: 0;
 
     font-size: 1.25rem;
     font-weight: normal;
     line-height: 1.4;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    color: inherit;
   }
 }

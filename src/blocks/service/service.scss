@@ -26,11 +26,17 @@
   }
 
   &__text {
+    @include text();
     display: none;
+    position: relative;
+  }
+
+  &__link {
+    position: relative;
+    color: inherit;
   }
 
   &__arrow {
-    position: relative;
     font-size: 1rem;
     width: 2em;
     height: 1em;

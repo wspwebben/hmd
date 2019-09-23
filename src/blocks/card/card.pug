@@ -1,4 +1,8 @@
 mixin card(card)
   .card(style=`background-image: url(img/${card.image})`)&attributes(attributes)
-    h3.card__caption= card.caption
+    h3.card__caption
+      if card.link
+        a.card__link(href= card.link)= card.caption
+      else
+        = card.caption
 

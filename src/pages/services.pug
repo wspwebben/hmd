@@ -22,7 +22,8 @@ block content
       const services = serviceTitles.map((title, index) => ({
         title,
         image: `img/${serviceImages[index % totalImages]}`,
-        text: 'lorem ipsum',      
+        text: 'lorem ipsum',
+        link: '/service.html',
       }));
 
     +grid(services, 'service').page__element.page__element--spacer

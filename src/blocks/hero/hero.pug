@@ -1,17 +1,6 @@
-mixin hero(slides)
-
+mixin hero(image, alt = '')
   .hero&attributes(attributes)
-    each slide in slides
-      img.hero__image(src= slide.image, role='presentation', alt='')
     .hero__inner
-      each slide in slides
-        h2.hero__title= slide.title
-        p.hero__text= slide.text
-
-        +button('Learn More', 'full').hero__button
-
-        .hero__controls
-          button.hero__control.hero__control--prev
-            +arrow().hero__arrow
-          button.hero__control.hero__control--next
-            +arrow().hero__arrow
+      img(src= image, role='presentation', alt= alt).hero__image
+      .hero__wrapper
+        block

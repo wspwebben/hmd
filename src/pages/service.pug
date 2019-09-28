@@ -11,12 +11,13 @@ block meta
 
 block content
 
-  .page__inner.page__element
-    .content.page__element
-      img(src="img/service1.jpg", alt=`Photo from ${title}`)
+  +hero("img/service1.jpg", `Photo from ${title}`)
+    .content
       h1= title
       p
         | Turn your bathroom into an oasis with a New Outlooks bathroom remodel. We'll work with you to find the perfect tile, fixtures, lighting -- everything necessary to create the perfect space where you begin and end your day.
+
+  .page__inner.page__element
 
     .content.page__element.page__element--spacer
       h2 About

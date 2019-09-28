@@ -1,0 +1,58 @@
+.hero-slider {
+  $this: &;
+  
+  background-color: $alternate-bg;
+
+  &__image {
+    @include round-borders(20px, ('bottom-left'));
+    display: block;
+  }
+
+  &__inner {
+    @include inner();
+    padding-top: 1.5rem;
+    padding-bottom: $gutter;
+  }
+
+  &__title {
+    @include title()
+
+  }
+
+  &__text {
+    @include text();
+    margin-bottom: 1.5rem;
+  }
+
+  &__controls {
+    display: flex;
+    margin-top: $gutter;
+  }
+
+  &__control {
+    flex-grow: 1;
+    padding: 1rem 2.5rem;
+    border: 0;
+    background-color: transparent;
+    text-align: left;
+    
+    &:hover,
+    &:focus {
+      outline: 0;
+    }
+
+    &--prev {
+      text-align: right;
+
+      #{$this}__arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__arrow {
+    width: 2em;
+    height: 1em;  
+    font-size: 1rem;
+  }
+}

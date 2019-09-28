@@ -1,57 +1,31 @@
 .hero {
-  $this: &;
-  background-color: $alternate-bg;
+  $image-height: 180px;
 
-  &__image {
-    @include round-borders(20px, ('bottom-left'));
-    display: block;
+  position: relative;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: calc(#{$image-height} - 5rem);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    background: $alternate-bg;
   }
 
   &__inner {
     @include inner();
-    padding-top: 1.5rem;
-    padding-bottom: $gutter;
   }
 
-  &__title {
-    @include title()
-
+  &__image {
+    @include round-borders(20px);
+    display: block;
+    width: 100%;
   }
 
-  &__text {
-    @include text();
-    margin-bottom: 1.5rem;
-  }
-
-  &__controls {
-    display: flex;
-    margin-top: $gutter;
-  }
-
-  &__control {
-    flex-grow: 1;
-    padding: 1rem 2.5rem;
-    border: 0;
-    background-color: transparent;
-    text-align: left;
-    
-    &:hover,
-    &:focus {
-      outline: 0;
-    }
-
-    &--prev {
-      text-align: right;
-
-      #{$this}__arrow {
-        transform: rotate(180deg);
-      }
-    }
-  }
-
-  &__arrow {
-    width: 2em;
-    height: 1em;  
-    font-size: 1rem;
+  &__wrapper {
+    padding: $gutter-gap 0;
   }
 }

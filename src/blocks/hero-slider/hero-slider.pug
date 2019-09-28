@@ -2,7 +2,7 @@ mixin hero-slider(slides)
 
   .hero-slider&attributes(attributes)
     each slide in slides
-      img.hero-slider__image(src= slide.image, role='presentation', alt='')
+      +image().hero-slider__image(src= slide.image, role='presentation', alt='')
     .hero-slider__inner
       each slide in slides
         h2.hero-slider__title= slide.title

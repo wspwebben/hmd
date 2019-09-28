@@ -3,7 +3,7 @@ mixin testimonials(reviews)
 
   .testimonials&attributes(attributes)
     .testimonials__inner
-      img(src= review.image, alt= `Picture from ${review.name}`).testimonials__image
+      +image(src= review.image, alt= `Picture from ${review.name}`).testimonials__image
       h2.testimonials__title Customer testimonial
       
       .testimonials__wrapper

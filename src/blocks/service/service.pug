@@ -1,9 +1,9 @@
 mixin service(service)
-  .service(class=allMods, style=`background-image: url(${service.image})`)
-    h2.service__title= service.title
-    if service.text
-      p.service__text= service.text
-    if service.link
-      a.service__link(href= service.link)
-        +arrow().service__arrow
+  .service
+    a.service__link(href= service.link)
+      .service__back(style=`background-image: url(${service.image})` role='presentation')
+      h2.service__title= service.title
+      if service.text
+        p.service__text= service.text
+      +arrow().service__arrow
     

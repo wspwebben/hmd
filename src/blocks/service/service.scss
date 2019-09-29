@@ -1,28 +1,56 @@
 .service {
+  $this: &;
+  $bgcolor: rgba($color-primary, 0.8);
 
   @include round-borders(20px);
 
   position: relative;
   overflow: hidden;
-  padding: $gutter-big $gutter;
-  background-color: $alternate-bg;
+  background-color: $bgcolor;
   color: $white;
 
-  &::before {
-    content: "";
+  &__link {
+    display: flex;
+    flex-direction: column;
+    min-height: 8.75rem;
+    padding: $gutter-big $gutter;
+    color: inherit;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+      
+      #{$this}__arrow {
+        transform: scaleX(1.5);
+      }
+    }
+  }
+
+  &__back {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba($color-primary, 0.8);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $bgcolor;
+    }
   }
 
   &__title {
     @include subtitle();
     position: relative;
-    margin-bottom: $gutter-gap;
-    color: inherit;
+
+    @media (max-width: $screen-tablet - 1) {
+      color: inherit;
+    }
   }
 
   &__text {
@@ -31,14 +59,74 @@
     position: relative;
   }
 
-  &__link {
-    position: relative;
-    color: inherit;
-  }
-
   &__arrow {
+    position: relative;
+    display: block;
+    margin-top: auto;
+    color: inherit;
+    transform-origin: left;
+    transition: transform $transition-time-fast;
+
     font-size: 1rem;
     width: 2em;
     height: 1em;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .service {
+    $this: &;
+
+    height: 100%;
+    overflow: hidden;
+    background-color: $alternate-bg;
+    color: $light-black;
+
+    &__link {
+      height: 100%;
+      min-height: 24.375rem;
+      transition: color $transition-time-fast;
+
+      &:hover,
+      &:focus {
+        outline: 0;
+        color: $white;
+        
+        #{$this}__back {
+          transform: none;
+        }
+
+        #{$this}__title {
+          color: inherit;
+
+          &::after {
+            background-color: currentColor;
+          }
+        }
+
+        #{$this}__text,
+        #{$this}__arrow {
+          color: inherit;
+        }
+      }
+    }
+
+    &__back {
+      transition: transform $transition-time-fast;
+      transform: translateY(-100%);
+    }
+
+    &__title {
+      @include underline(2.5em, $color-primary, false);
+      padding-bottom: 0.7em;
+    }
+
+    &__text {
+      display: block;
+    }
+
+    &__arrow {
+      color: $black;
+    }
   }
 }

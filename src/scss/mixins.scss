@@ -25,7 +25,7 @@
   padding: 0;
 }
 
-@mixin underline($width: auto, $color: currentColor) {
+@mixin underline($width: auto, $color: currentColor, $centered: true) {
   position: relative;
 
   &::after {
@@ -37,7 +37,10 @@
 
     height: 0.2rem;
     width: $width;
-    margin: 0 auto;
+
+    @if ($centered) {
+      margin: 0 auto;
+    }
 
     background-color: $color;
   }
@@ -62,6 +65,10 @@
   font-size: 1.25rem;
   font-weight: normal;
   line-height: 1.4;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 1.5rem;
+  }
 }
 
 @mixin text() {

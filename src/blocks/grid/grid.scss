@@ -14,13 +14,29 @@
   }
 
   &__item {
-
-    &:not(:last-child) {
-      margin-bottom: $gutter-small;
+    margin-bottom: $gutter-small;
+    
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
   &__more {
     margin-top: $gutter-gap;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .grid {
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      grid-gap: $gutter;
+    }
+
+    &__item {
+      margin-bottom: 0;
+    }
   }
 }

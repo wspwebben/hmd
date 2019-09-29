@@ -24,9 +24,12 @@
     margin-bottom: 1.5rem;
   }
 
+  &__panel {
+    margin-top: $gutter;
+  }
+
   &__controls {
     display: flex;
-    margin-top: $gutter;
   }
 
   &__control {
@@ -54,5 +57,87 @@
     width: 2em;
     height: 1em;  
     font-size: 1rem;
+  }
+
+  &__progress {
+    display: none;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .hero-slider {
+
+    &__image {
+      @include round-borders(30px, ('bottom-left'));
+    }
+
+    &__inner {
+      $vertical-padding: 3rem;
+
+      padding-top: $vertical-padding;
+      padding-bottom: $vertical-padding;
+    }
+
+    &__title {
+      margin-bottom: 1.5rem;
+    }
+
+    &__text {
+      max-width: 65%;
+      margin-bottom: 2.5em;
+    }
+
+    &__button {
+      $vertical-padding: 1em;
+
+      max-width: 16.25rem;
+      font-size: 1.125rem;
+
+      padding-top: $vertical-padding;
+      padding-bottom: $vertical-padding;
+    }
+
+    &__panel {
+      display: flex;
+      align-content:  center;
+      justify-content: space-between;
+    }
+
+    &__control {
+      $horizontal-padding: 3rem;
+
+      padding-left: $horizontal-padding;
+      padding-right: $horizontal-padding;
+    }
+
+    &__progress { 
+      @include font-family("Roboto");
+
+      display: flex;
+      color: $color-secondary;
+
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    &__progress-item {
+
+
+      &--total {
+        display: flex;
+        position: relative;
+        opacity: 0.2;
+
+        &::before {
+          content: "";
+          align-self: center;
+          height: 2px;
+          width: 1.6em;
+          margin-left: 1rem;
+          margin-right: 1.25rem;
+          background-color: currentColor;
+        }
+      }
+    }
   }
 }

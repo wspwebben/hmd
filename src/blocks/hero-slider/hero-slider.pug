@@ -10,8 +10,12 @@ mixin hero-slider(slides)
 
         +button('Learn More', 'full').hero-slider__button
 
+      .hero-slider__panel
         .hero-slider__controls
           button.hero-slider__control.hero-slider__control--prev
             +arrow().hero-slider__arrow
           button.hero-slider__control.hero-slider__control--next
             +arrow().hero-slider__arrow
+        .hero-slider__progress
+          span.hero-slider__progress-item 01
+          span.hero-slider__progress-item.hero-slider__progress-item--total= '0' + slides.length

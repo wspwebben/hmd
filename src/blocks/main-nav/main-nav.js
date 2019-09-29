@@ -5,10 +5,6 @@ const wrapper = menu.querySelector('.js-menu__wrapper');
 const openClass = 'main-nav__wrapper--open';
 let isMenuOpen = false;
 
-wrapper.classList.add(openClass);
-wrapper.style.maxHeight = `${wrapper.clientHeight}px`;
-wrapper.classList.remove(openClass);
-
 function openMenu() {
   isMenuOpen = true;
   wrapper.classList.add(openClass)

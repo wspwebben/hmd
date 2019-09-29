@@ -2,7 +2,7 @@
 
   $block-name:                &; // #{$block-name}__element
 
-  $vertical-padding: 0.625rem;
+  --block-padding: 0.625rem;
 
   background-color: $alternate-bg;
   position: relative;
@@ -10,11 +10,19 @@
   &__inner {
     @include inner();
     display: flex;
-    padding-top: $vertical-padding;
-    padding-bottom: $vertical-padding;
+    align-items: center;
+    padding-top: var(--block-padding);
+    padding-bottom: var(--block-padding);
   }
 
   &__menu {
     margin-left: auto;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .hmd-header {
+    --block-padding: #{$gutter};
+
   }
 }

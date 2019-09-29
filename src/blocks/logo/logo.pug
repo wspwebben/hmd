@@ -1,20 +1,4 @@
-//- Все примеси в этом файле должны начинаться c имени блока (logo)
-
-mixin logo(mods)
-
-  //- Принимает:
-  //-   mods  {string} - список модификаторов
-  
-  -
-    // список модификаторов
-    var allMods = '';
-    if(typeof(mods) !== 'undefined' && mods) {
-      var modsList = mods.split(',');
-      for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' logo--' + modsList[i].trim();
-      }
-    }
-
+mixin logo()
   a.logo(class=allMods, href='/')&attributes(attributes)
     svg.logo__image(width=57 height=30)
       title HMD Construction Group

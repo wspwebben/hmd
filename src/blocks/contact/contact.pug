@@ -10,6 +10,6 @@ mixin contact()
       +input('contact__field')(placeholder="Name",name="name")
       +input('contact__field')(placeholder="Phone",name="phone", type="tel")
       +input('contact__field')(placeholder="Email",name="email", type="email")
-      +input('contact__field')(placeholder="Your message",name="message")
+      +input('contact__field contact__field--full')(placeholder="Your message",name="message")
       
-      +button('Send', 'full').contact__submit
+      +button('Send', 'big').contact__submit

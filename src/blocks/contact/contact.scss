@@ -19,3 +19,35 @@
     margin-top: $gutter-gap;
   }
 }
+
+@media (min-width: $screen-tablet) {
+  .contact {
+
+    &__title {
+      margin-bottom: 1.5rem;
+    }
+
+    &__description {
+      max-width: 80%;
+      margin: 0 auto;
+      margin-bottom: 3rem;
+    }
+
+    &__form {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 2rem 1rem;
+    }
+
+    &__field {
+      &--full {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &__submit {
+      grid-column: 1 / -1;
+      margin: 0 auto;
+    }
+  }
+}

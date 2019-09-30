@@ -79,6 +79,10 @@
   font-size: 0.875rem;
   line-height: 1.5;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @media (min-width: $screen-tablet) {
     font-size: 1rem;
   }

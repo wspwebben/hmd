@@ -23,6 +23,8 @@
 
   &__image {
     @include round-borders(20px);
+    max-width: 32rem;
+    margin: 0 auto;
     margin-bottom: $gutter-gap;
   }
 
@@ -35,7 +37,7 @@
       z-index: $zindex-negative;
       width: 8.5em;
       height: 7.5em;
-      opacity: 0.05;
+      opacity: 0.03;
       background-image: url('../img/quotes.svg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -86,5 +88,56 @@
     width: 2em;
     height: 1em;  
     font-size: 1rem;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .testimonials {
+
+    &::after {
+      top: calc(320px - 2.5rem);
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      padding: 0 4.5rem;
+      padding-bottom: 3rem;
+    }
+
+    &__image {
+      margin-bottom: 3rem;
+    }
+
+    &__wrapper {
+
+      &::before {
+        width: 10.75rem;
+        height: 9.5rem;
+        left: -3rem;
+      }
+    }
+
+    &__title {
+      margin-bottom: 3rem;
+    }
+
+    &__name {
+      font-size: 1.125rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__controls {
+      --horizontal-padding: 1.875rem;
+
+      align-self: flex-start;
+      margin-top: 3rem;
+      margin-left: calc(var(--horizontal-padding) * -1);
+    }
+
+    &__control {
+      padding-left: var(--horizontal-padding);
+      padding-right: var(--horizontal-padding);
+    }
   }
 }

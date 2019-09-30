@@ -14,7 +14,9 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions"
+    "last 2 versions",
+    "not IE < 12",
+    "not ie_mob < 12"
   ],
   "lint-staged": {
     "*.{js,pug,md}": "editorconfig-cli",

@@ -75,3 +75,12 @@
     height: 0.65em;
   }
 }
+
+@media (min-width: $screen-tablet) {
+  .button {
+
+    &--small {
+      font-size: 0.875rem;
+    }
+  }
+}

@@ -1,17 +1,21 @@
 .inline-slider {
-
-  overflow: auto;
-
   &__track {
+    overflow: auto;
     display: flex;
   }
   
   &__item {
     flex-shrink: 0;
-    min-width: 15rem;
+    min-width: 14.25rem;
 
     &:not(:last-child) {
       margin-right: $gutter;
     }
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .inline-slider {
+    padding: 0 $gutter;
   }
 }

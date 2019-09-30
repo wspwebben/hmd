@@ -17,3 +17,24 @@
     margin-bottom: $gutter-gap;
   }
 }
+
+@media (min-width: $screen-tablet) {
+  .inline-portfolio {
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    &__title {
+      margin-bottom: 0;
+      margin-right: 3.75rem;
+    }
+
+    &__link {
+      margin-bottom: 0;
+      padding: 0.9em 1.5em;
+    }
+  }
+}

@@ -1,11 +1,23 @@
 .hmd-header {
-
-  $block-name:                &; // #{$block-name}__element
+  $this: &;
 
   --block-padding: 0.625rem;
 
   background-color: $alternate-bg;
   position: relative;
+
+
+  &--footer {
+    @media (max-width: $screen-tablet - 1) {
+      #{$this}__logo {
+        margin: 0 auto;
+      }
+
+      #{$this}__menu {
+        display: none;
+      }
+    }
+  }
 
   &__inner {
     @include inner();

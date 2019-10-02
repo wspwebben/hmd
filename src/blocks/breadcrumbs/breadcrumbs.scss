@@ -1,9 +1,8 @@
 .breadcrumbs {
-  display: none;
-
   $block-name:                &; // #{$block-name}__element
   
-  margin: 2.5rem 0;
+  display: none;
+  margin-bottom: $gutter-gap;
 
   &__inner {
     @include inner();
@@ -53,5 +52,11 @@
 
   &__caption {
     padding: 0 0.75rem;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .breadcrumbs {
+    display: block;
   }
 }

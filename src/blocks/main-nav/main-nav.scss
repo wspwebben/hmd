@@ -68,6 +68,7 @@
 
 @media (min-width: $screen-tablet) {
   .main-nav {
+    $link-padding: 1em;
 
     &__toggle {
       display: none;
@@ -87,12 +88,16 @@
       align-items:  center;
     }
 
+    &__item {
+
+      &--active {
+        @include underline(calc(100% - #{2 * $link-padding}));
+      }
+    }
 
     &__link {
-      $horizontal-padding: 1em;
-
-      padding-left: $horizontal-padding;
-      padding-right: $horizontal-padding;
+      padding-left: $link-padding;
+      padding-right: $link-padding;
     }
 
     &__call {

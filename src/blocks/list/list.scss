@@ -1,7 +1,7 @@
 .list {
   @include round-borders(20px);
 
-  padding: $gutter-big   $gutter;
+  padding: $gutter-big $gutter;
   background-color: $alternate-bg;
 
   &__list {
@@ -10,9 +10,10 @@
 
   &__item {
     text-align: center;
+    margin-bottom: 2rem;
 
-    &:not(:last-child) {
-      margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -26,5 +27,15 @@
   &__text {
     @include text();
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .list {
+    padding: 3.125rem;
+
+    &__item {
+      margin-bottom: 3rem;
+    }
   }
 }

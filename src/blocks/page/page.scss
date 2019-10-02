@@ -132,3 +132,19 @@
     flex-shrink: 0;
   }
 }
+
+@media (min-width: $screen-tablet) {
+  .page {
+
+    &__content {
+      padding-bottom: 6rem;
+    }
+
+    &__element {
+
+      &--spacer {
+        margin-bottom: 6rem;
+      }
+    }
+  }
+}

@@ -23,9 +23,29 @@
     @include round-borders(20px);
     display: block;
     width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
+    margin-bottom: $gutter-gap;
   }
 
   &__wrapper {
-    padding: $gutter-gap 0;
+    padding-bottom: $gutter-gap;
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .hero {
+    
+    &__inner {
+      padding: 0 4.5rem;
+    }
+
+    &__image {
+      margin-bottom: 3rem;
+    }
+
+    &__wrapper {
+      padding-bottom: 3rem;
+    }
   }
 }

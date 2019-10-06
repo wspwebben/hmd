@@ -17,9 +17,8 @@
     padding: $gutter 0;
     padding-bottom: $gutter-spacer;
     flex-grow: 1;
-
   }
-  
+
   #{$this}__content--no-padding {
     padding-top: 0;
   }
@@ -148,6 +147,23 @@
 
       &--spacer {
         margin-bottom: 6rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-desktop) {
+  .page {
+
+    &__content {
+      padding-top: 2 * $gutter;
+      padding-bottom: 9rem;
+    }
+
+    &__element {
+
+      &--spacer {
+        margin-bottom: 9rem;
       }
     }
   }

@@ -2,11 +2,8 @@
   $this: &;
 
   &--narrow {
-
-    #{$this}__list {
-      max-width: 80%;
-      margin: 0 auto;
-    }
+    max-width: 80%;
+    margin: 0 auto;
   }
 
   &__list {
@@ -28,15 +25,30 @@
 
 @media (min-width: $screen-tablet) {
   .grid {
+    --columns: 3;
+
+    &--narrow {
+      max-width: none;
+    }
+
+    &--tablet-wide {
+      --columns: 2;
+    }
 
     &__list {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      grid-template-columns: repeat(var(--columns), 1fr);
       grid-gap: $gutter;
+      justify-content: center;
     }
 
     &__item {
       margin-bottom: 0;
+    }
+
+    &__more {
+      margin: 0 auto;
+      margin-top: 3rem;
     }
   }
 }

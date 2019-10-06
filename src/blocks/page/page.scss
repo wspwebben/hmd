@@ -1,4 +1,6 @@
 .page {
+  $this: &;
+
   box-sizing: border-box;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-text-size-adjust: 100%;
@@ -16,9 +18,10 @@
     padding-bottom: $gutter-spacer;
     flex-grow: 1;
 
-    &--no-padding {
-      padding-top: 0;
-    }
+  }
+  
+  #{$this}__content--no-padding {
+    padding-top: 0;
   }
 
   &__inner {

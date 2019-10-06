@@ -1,22 +1,39 @@
 -
   const pages = {
+    index: {
+      "text": "Home",
+      "url": "/",
+      "icon": "home",
+      "inMenu": false,
+    },
     services: {
       "text": "Services",
       "url": "/services.html",
       "inMenu": true,
+      "parent": "index",
+    },
+    service: {
+      "text": null,
+      "url": "/service.html",
+      "inMenu": false,
+      "parent": "services" 
     },
     about: {
       "text": "About Us",
       "url": "/about.html",
       "inMenu": true,
+      "parent": "index",
     },
     portfolio: {
       "text": "Our portfolio",
       "url": "/portfolio.html",
       "inMenu": true,
+      "parent": "index",
     },
     project: {
-      "text": "Project 1",
+      "text": false,
       "url": "/project.html",
+      "inMenu": false,
+      "parent": "portfolio",
     }
   }

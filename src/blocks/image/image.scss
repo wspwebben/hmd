@@ -1,3 +1,17 @@
 .image {
+  $this: &;
+
   overflow: hidden;
+
+  &--16x9 {
+    position: relative;
+    padding-top: 56.25%;
+    height: 0;
+    
+    #{$this}__picture {
+      @include stretch();
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }

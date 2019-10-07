@@ -1,3 +1,9 @@
 mixin image(rootclass, mods)
-  div.image(class= rootclass)
+  -
+    const element = 'image';
+    const modList = mods ? mods.split(' ') : [];
+    const allMods = modList.map(mod => `${element}--${mod}`);
+
+
+  div.image(class= [rootclass, ...allMods])
     img.image__picture(src= src, alt= alt)&attributes(attributes)

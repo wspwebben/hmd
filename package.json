@@ -75,13 +75,8 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "autosize": "^4.0.2",
-    "baron": "^3.0.3",
-    "choices.js": "^7.0.0",
-    "closest": "0.0.1",
-    "jquery": "^3.1.1",
-    "object-fit-images": "^3.2.3",
-    "svg4everybody": "^2.1.8"
+    "svg4everybody": "^2.1.9",
+    "swiper": "^5.0.4"
   },
   "husky": {
     "hooks": {

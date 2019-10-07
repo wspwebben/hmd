@@ -17,6 +17,7 @@ let config = {
     'src/scss/mixins.scss',
     'src/scss/normalize.scss',
     'src/scss/fonts.scss',
+    'swiper/swiper.scss',
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [

@@ -9,13 +9,20 @@ block meta
 
 block content
   -
-    const heroTitles = ['Residential remodeling'];
+    const heroTitles = ['Residential remodeling', 'Commertial remodeling', 'Handy man'];
     const heroImages = ['hero.jpg', 'about.jpg'];
-    const heroText = 'The kitchen is the heart of every home and New Outlooks is here to design and build your dream kitchen. Whether it\'s a cabinet refresh or a complete kitchen redesign, New Outlooks will take your kitchen from drab to fab.';
+    const heroTexts = [
+        'The kitchen is the heart of every home and New Outlooks is here to design and build your dream kitchen. Whether it\'s a cabinet refresh or a complete kitchen redesign, New Outlooks will take your kitchen from drab to fab.',
+        'There are many ways to remodel your basement -- turn it into a playroom for the kids, a home movie theater, a man cave, a game room -- the possibilities are endless.',
+        'Turn your bathroom into an oasis with a New Outlooks bathroom remodel. We\'ll work with you to find the perfect tile, fixtures, lighting -- everything necessary to create the perfect space where you begin and end your day.',
+        'Have you run out of storage space? Has your family outgrown your home? Adding space to your home is always a good investment. New Outlooks can create the perfect addition to your home, customized just for your family\'s needs.',
+        'Let the New Outlooks Handyman team tackle those small but important jobs. We\'ll redo your front steps, install a new door, paint a room -- no job is too big or small.',
+        'Let us help your business optimize your space and look great! Our team has had extensive remodeling experience in healthcare, office, and retail settings, so you know you\'re in good hands.',
+      ]
     const heroSlides = heroTitles.map((title, index) => ({
       title,
       image: `img/${heroImages[index % heroImages.length]}`,
-      text: heroText,
+      text: heroTexts[index % heroTexts.length],
     }))
 
   +hero-slider(heroSlides).page__element.page__element--spacer

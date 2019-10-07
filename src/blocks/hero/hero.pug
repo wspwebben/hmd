@@ -1,6 +1,6 @@
 mixin hero(image, alt = '')
   .hero&attributes(attributes)
     .hero__inner
-      +image(src= image, role='presentation', alt= alt).hero__image
+      +image('hero__image')(src= image, role='presentation', alt= alt)
       .hero__wrapper
         block

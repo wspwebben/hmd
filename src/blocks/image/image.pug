@@ -1,2 +1,3 @@
-mixin image()
-  img(src= src, alt= alt)&attributes(attributes)
+mixin image(rootclass, mods)
+  div.image(class= rootclass)
+    img.image__picture(src= src, alt= alt)&attributes(attributes)

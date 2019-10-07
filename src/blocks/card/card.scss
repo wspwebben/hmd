@@ -20,22 +20,14 @@
 
   &::after {
     content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    @include stretch();
 
     // background-image: linear-gradient(rgba($black, 0.8), transparent);
     background: linear-gradient(to top, rgba($black, 0.8) 0%, transparent 35%);
   }
 
   &__wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    @include stretch();
 
     display: flex;
     flex-direction: column;

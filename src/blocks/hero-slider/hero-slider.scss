@@ -3,6 +3,18 @@
   
   background-color: $alternate-bg;
 
+  &__slide {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  &__image-wrapper {
+    height: 0;
+    padding-top: 56.25%;
+  }
+
   &__image {
     @include round-borders(20px, ('bottom-left'));
     display: block;
@@ -10,6 +22,9 @@
 
   &__inner {
     @include inner();
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     padding-top: 1.5rem;
     padding-bottom: $gutter;
   }
@@ -22,6 +37,10 @@
   &__text {
     @include text();
     margin-bottom: 1.5rem;
+  }
+
+  &__button {
+    margin-top: auto;
   }
 
   &__panel {
@@ -138,6 +157,22 @@
           background-color: currentColor;
         }
       }
+    }
+  }
+}
+
+
+.no-js {
+  .hero-slider {
+    &__slide {
+
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+
+    &__panel {
+      display: none;
     }
   }
 }

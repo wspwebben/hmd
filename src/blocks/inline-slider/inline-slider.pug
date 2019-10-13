@@ -1,6 +1,6 @@
 mixin inline-slider(slides)
-  .inline-slider&attributes(attributes)
-    ul.inline-slider__track
+  .inline-slider.js-inline-slider.swiper-container&attributes(attributes)
+    ul.inline-slider__track.swiper-wrapper
       each slide in slides
-        li.inline-slider__item
-          +card(slide).inline-slider__item
+        li.inline-slider__item.swiper-slide
+          +card(slide).inline-slider__card

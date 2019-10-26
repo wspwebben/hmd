@@ -1,17 +1,22 @@
 mixin testimonials(reviews)
-  - const review = reviews[0];
-
-  .testimonials&attributes(attributes)
+  .testimonials.js-testimonials&attributes(attributes)
     .testimonials__inner
-      +image('testimonials__image')(src= review.image, alt= `Picture from ${review.name}`)
+      .testimonials__images.js-testimonials__main-slider.swiper-container
+        .swiper-wrapper
+          each review in reviews
+            .testimonials__image-slide.swiper-slide
+              +image('testimonials__image')(src= review.image, alt= `Picture from ${review.name}`)
       h2.testimonials__title Customer testimonial
       
-      .testimonials__wrapper
-        b.testimonials__name= review.name
-        p.testimonials__text= review.text
+      .testimonials__reviews.js-testimonials__sub-slider.swiper-container
+        .swiper-wrapper
+          each review in reviews
+            .testimonials__wrapper.swiper-slide
+              b.testimonials__name= review.name
+              p.testimonials__text= review.text
 
       .testimonials__controls
-          button.testimonials__control.testimonials__control--prev
+          button.testimonials__control.testimonials__control--prev.js-testimonials__prev
             +arrow().testimonials__arrow
-          button.testimonials__control.testimonials__control--next
+          button.testimonials__control.testimonials__control--next.js-testimonials__next
             +arrow().testimonials__arrow

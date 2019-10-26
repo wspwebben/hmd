@@ -60,12 +60,16 @@ block content
 
   -
     const testimonialsClient = ['John & Martha Greenwald', 'John John', 'Mrs. Claus'];
-    const testimonialsImages = ['img/testimonials1.jpg', 'https://picsum.photos/id/604/320/180', 'https://picsum.photos/id/837/320/180'];
-    const testimonialsText = 'We will not hesitate to call on you in the future. We were very pleased with your pricing, scheduling, and workmanship. You were most cooperative making adjustments or corrections when needed. We appreciated your flexibility and attention.';
+    const testimonialsImages = ['img/testimonials1.jpg', 'https://picsum.photos/id/604/280/180', 'https://picsum.photos/id/837/280/180'];
+    const testimonialsTexts = [
+      'We will not hesitate to call on you in the future. We were very pleased with your pricing, scheduling, and workmanship. You were most cooperative making adjustments or corrections when needed. We appreciated your flexibility and attention.',
+      'We will not hesitate to call on you in the future.',
+      'You were most cooperative making adjustments or corrections when needed. We appreciated your flexibility and attention.',
+    ];
     const testimonials = testimonialsClient.map((name, index) => ({
       name,
       image: `${testimonialsImages[index % testimonialsImages.length]}`,
-      text: testimonialsText,
+      text: testimonialsTexts[index % testimonialsTexts.length],
     }));
 
   +testimonials(testimonials).page__element.page__element--spacer

@@ -21,11 +21,14 @@
     padding-bottom: $gutter;
   }
 
+  &__images {
+    margin-bottom: $gutter-gap;
+  }
+
   &__image {
     @include round-borders(20px);
     max-width: 32rem;
     margin: 0 auto;
-    margin-bottom: $gutter-gap;
   }
 
   &__wrapper {
@@ -88,6 +91,26 @@
     width: 2em;
     height: 1em;  
     font-size: 1rem;
+  }
+}
+
+.no-js {
+  .testimonials {
+    // &__images,
+    &__reviews {
+      overflow: auto;
+    }
+
+    // &__image-slide,
+    &__wrapper {
+      &:not(:last-child) {
+        margin-right: $gutter;
+      }
+    }
+
+    &__controls {
+      display: none;
+    }
   }
 }
 

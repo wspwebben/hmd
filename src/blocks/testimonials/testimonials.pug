@@ -6,12 +6,14 @@ mixin testimonials(reviews)
           each review in reviews
             .testimonials__image-slide.swiper-slide
               +image('testimonials__image')(src= review.image, alt= `Picture from ${review.name}`)
-      h2.testimonials__title Customer testimonial
       
+    .testimonials__inner.testimonials__inner--quotes
+      h2.testimonials__title Customer testimonial
+
       .testimonials__reviews.js-testimonials__sub-slider.swiper-container
         .swiper-wrapper
           each review in reviews
-            .testimonials__wrapper.swiper-slide
+            .testimonials__review.swiper-slide
               b.testimonials__name= review.name
               p.testimonials__text= review.text
 

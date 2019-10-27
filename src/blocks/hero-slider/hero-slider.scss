@@ -26,7 +26,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 1.5rem;
-    padding-bottom: $gutter;
+    padding-bottom: 1rem;
   }
 
   &__title {
@@ -44,7 +44,7 @@
   }
 
   &__panel {
-    margin-top: $gutter;
+    padding: $gutter 0;
   }
 
   &__controls {
@@ -91,10 +91,8 @@
     }
 
     &__inner {
-      $vertical-padding: 3rem;
-
-      padding-top: $vertical-padding;
-      padding-bottom: $vertical-padding;
+      padding-top: 3rem;
+      padding-bottom: 2rem;
     }
 
     &__title {
@@ -120,13 +118,28 @@
       display: flex;
       align-content:  center;
       justify-content: space-between;
+      padding: 0 $gutter;
+      padding-bottom: 3rem;
+    }
+
+    &__controls {
+      --horizontal-padding: 3rem;
+
+      margin-left: calc(var(--horizontal-padding) * -1);
     }
 
     &__control {
-      $horizontal-padding: 3rem;
+      $secondary-padding: $gutter-big;
 
-      padding-left: $horizontal-padding;
-      padding-right: $horizontal-padding;
+      &--prev {
+        padding-left: var(--horizontal-padding);
+        padding-right: $secondary-padding;
+      }
+
+      &--next {
+        padding-left: $secondary-padding;
+        padding-right: var(--horizontal-padding);
+      }
     }
 
     &__progress { 

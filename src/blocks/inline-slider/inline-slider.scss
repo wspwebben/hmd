@@ -1,6 +1,4 @@
 .inline-slider {
-  overflow: auto;
-
   &__track {
     display: flex;
     list-style: none;
@@ -20,6 +18,12 @@
 
   &__card {
     min-height: 0;
+  }
+}
+
+.no-js {
+  .inline-slider {
+    overflow: auto;
   }
 }
 

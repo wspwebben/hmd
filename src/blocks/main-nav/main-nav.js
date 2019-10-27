@@ -1,6 +1,7 @@
 const menu = document.querySelector('.js-menu');
 const toggle = menu.querySelector('.js-menu__toggle');
 const wrapper = menu.querySelector('.js-menu__wrapper');
+const closeTriggers = menu.querySelectorAll('.js-menu__close');
 
 const openClass = 'main-nav__wrapper--open';
 let isMenuOpen = false;
@@ -26,4 +27,11 @@ function escapeKeydownHandler({ key }) {
 
 toggle.addEventListener('click', function() {
   isMenuOpen ? closeMenu() : openMenu();
+});
+
+closeTriggers.forEach(trigger => {
+  trigger.addEventListener('click', function() {
+    // TODO: remove overlay in button, replace click by closeMenu method
+    toggle.click();
+  })
 });

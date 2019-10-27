@@ -75,6 +75,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "micromodal": "^0.4.2",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.0.4"
   },

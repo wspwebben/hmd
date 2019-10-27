@@ -6,6 +6,15 @@ let config = {
   ],
   'ignoredBlocks': [
     'no-js',
+    'is-accent',
+    'is-light',
+    'is-open',
+    'is-center',
+    'is-gap',
+
+    'swiper-container',
+    'swiper-wrapper',
+    'swiper-slide',
   ],
   'alwaysAddBlocks': [
     'sprite-svg',

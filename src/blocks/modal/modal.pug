@@ -1,15 +1,11 @@
 mixin modal(id)
   .modal.micromodal-slide#modal-1(aria-hidden="true")
     .modal__overlay(tabindex="-1" data-micromodal-close)
-      .modal__container(role="dialog" aria-modal="true" aria-labelledby="modal-1-title")
-        header.modal__header
-          h2.modal__title#modal-1-title
-            | Micromodal
-          button.modal__close(aria-label="Close modal" data-micromodal-close)
-        main.modal__content#modal-1-content
-          p
-            | Try hitting the <code>tab</code> key and notice how the focus stays within the modal itself. Also, <code>esc</code> to close modal.
-        footer.modal__footer
-          button.modal__btn.modal__btn-primary Continue
-          button.modal__btn(data-micromodal-close aria-label="Close this dialog window") Close
-      
+      .modal__container(role="dialog" aria-modal="true" aria-labelledby=`${id}-title`)
+        main.modal__content(id=`${id}-content`)
+          +contact()
+            block title
+              span(id=`${id}-title`)
+                | Contact Us
+        button.modal__close(aria-label="Close modal" data-micromodal-close)
+          span.modal__cross(data-micromodal-close)

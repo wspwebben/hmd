@@ -40,6 +40,10 @@
     transition: transform $transition-time-fast;
   }
 
+  &__call {
+    display: none;
+  }
+
   &__close {
     position: absolute;
     top: 0;
@@ -47,14 +51,14 @@
     border: 0;
     padding: 1rem $gutter;
     background-color: transparent;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
 
     &:hover,
     &:focus {
       outline: 0;
 
       #{$this}__cross {
-        transform: scale(1.5);
+        transform: scale(1.25);
       }
     }
   }
@@ -83,6 +87,37 @@
 
     &::after {
       transform: rotate(45deg);
+    }
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .modal {
+
+    &__overlay {
+      align-items: center;
+    }
+
+    &__container {
+      max-width: 60rem;
+      width: 100%;
+      padding: 5rem $gutter;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__call {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    &__close {
+      top: 0.75rem;
+      right: 1rem;
     }
   }
 }

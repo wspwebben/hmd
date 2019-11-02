@@ -3,6 +3,7 @@ mixin modal(id)
     .modal__overlay(tabindex="-1" data-micromodal-close)
       .modal__container(role="dialog" aria-modal="true" aria-labelledby=`${id}-title`)
         main.modal__content(id=`${id}-content`)
+          +call().modal__call
           +contact()
             block title
               span(id=`${id}-title`)

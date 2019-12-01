@@ -49,6 +49,10 @@
     &:focus {
       outline: 0;
     }
+
+    &:not(:link) {
+      cursor: default;
+    }
   }
 
   &__caption {

@@ -121,3 +121,12 @@
     }
   }
 }
+
+@media (min-width: $screen-desktop) {
+  .modal {
+
+    &__call {
+      display: none;
+    }
+  }
+}

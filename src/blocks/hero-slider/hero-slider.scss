@@ -5,8 +5,7 @@
 
   &__slide {
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    background-color: $alternate-bg;
     height: auto;
   }
 
@@ -19,12 +18,13 @@
     @include round-borders(20px, ('bottom-left'));
     display: block;
   }
-
+  
   &__inner {
     @include inner();
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    height: 100%;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
   }
@@ -44,7 +44,7 @@
   }
 
   &__panel {
-    padding: $gutter 0;
+    @include inner();
   }
 
   &__controls {
@@ -53,7 +53,7 @@
 
   &__control {
     flex-grow: 1;
-    padding: 1rem 2.5rem;
+    padding: $gutter 2.5rem;
     border: 0;
     background-color: transparent;
     text-align: left;
@@ -85,6 +85,15 @@
 
 @media (min-width: $screen-tablet) {
   .hero-slider {
+    // content width is around 40rem
+    // so paddings are (100% - 50rem) / 2
+    $side-width: calc(50vw - 20rem);
+
+    position: relative;
+
+    &__image-slider {
+      padding: 0 $side-width;
+    }
 
     &__image {
       @include round-borders(30px, ('bottom-left'));
@@ -101,7 +110,7 @@
 
     &__text {
       max-width: 65%;
-      margin-bottom: 2.5em;
+      // margin-bottom: 2.5em;
     }
 
     &__button {
@@ -115,17 +124,22 @@
     }
 
     &__panel {
+      position: absolute;
+      z-index: 1;
+      right: $side-width;
+      bottom: 0;
       display: flex;
       align-content:  center;
       justify-content: space-between;
-      padding: 0 $gutter;
-      padding-bottom: 3rem;
+      min-width: 25rem;
+      max-width: 28rem;
+      width: 50%;
+      padding: 2rem $gutter-small;
+      background-color: rgba($white, 0.3);
     }
 
     &__controls {
       --horizontal-padding: 3rem;
-
-      margin-left: calc(var(--horizontal-padding) * -1);
     }
 
     &__control {

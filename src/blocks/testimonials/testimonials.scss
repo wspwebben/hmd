@@ -18,6 +18,14 @@
 
   &__inner {
     @include inner();
+  }
+
+  &__images {
+    width: 100%;
+    margin-bottom: $gutter-gap;
+  }
+  
+  &__content {
 
     &--quotes {
       position: relative;
@@ -35,11 +43,6 @@
         background-size: cover;
       }
     }
-  }
-
-  &__images {
-    width: 100%;
-    margin-bottom: $gutter-gap;
   }
 
   &__image {
@@ -120,6 +123,7 @@
 
 @media (min-width: $screen-tablet) {
   .testimonials {
+    $button-padding: 1.875rem;
 
     &::after {
       top: calc(320px - 2.5rem);
@@ -129,20 +133,25 @@
       display: flex;
       flex-direction: column;
       padding: 0 4.5rem;
+    }
 
+    &__images {
+      margin-bottom: 3rem;
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      
       &--quotes {
 
         &::before {
           width: 10.75rem;
           height: 9.5rem;
-          left: $gutter;
+          left: -$gutter-big;
           top: 5rem;
         }
       }
-    }
-
-    &__images {
-      margin-bottom: 3rem;
     }
 
     &__title {
@@ -155,17 +164,74 @@
     }
 
     &__controls {
-      --horizontal-padding: 1.875rem;
-
       align-self: flex-start;
       margin-top: 3rem;
-      margin-left: calc(var(--horizontal-padding) * -1);
+      margin-left: -$button-padding;
     }
 
     &__control {
+      padding: 3rem $button-padding;
+    }
+  }
+}
+
+@media (min-width: $screen-desktop) {
+  .testimonials {
+    $image-shift: 3.75rem;
+
+    &::after {
+      top: 0;
+      left: 0;
+      right: calc(50vw - #{$inner-width / 2 - $image-shift} + #{$gutter})
+    }
+
+    &__inner {
+      flex-direction: row-reverse;
+      padding: 0 $gutter;
+    }
+
+    &__images {
+      position: relative;
+      bottom: $image-shift;
+      align-self: flex-end;
+      width: 0;
+      flex-grow: 1;
+      margin-bottom: 0;
+    }
+
+    &__image {
+      // height: 100%;
+      max-width: 40rem;
+    }
+
+    &__content {
+      // wtf, breaks the width without that
+      width: 0;
+      flex-grow: 1;
       padding: 3rem 0;
-      padding-left: var(--horizontal-padding);
-      padding-right: var(--horizontal-padding);
+      padding-right: 3rem;
+
+      &--quotes {
+        &::before {
+          top: 8rem;
+          left: -3.125rem;
+        }
+      }
+    }
+
+    &__text {
+      margin-bottom: $gutter;
+    }
+
+    &__controls {
+      margin-top: $gutter;
+    }
+
+    &__control {
+      $padding: $gutter-big;
+
+      padding: $padding;
+      margin-bottom: -$padding;
     }
   }
 }

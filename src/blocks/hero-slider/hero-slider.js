@@ -26,6 +26,9 @@ if (imageWrapper && contentWrapper) {
       nextEl: `.${block}__next`,
     },
     effect: 'coverflow',
+    coverflowEffect: {
+      slideShadows: false,
+    },
     speed: 500,
     on: {
       init() {

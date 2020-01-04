@@ -49,3 +49,33 @@
     }
   }
 }
+
+@media (min-width: $screen-desktop) {
+  .hero {
+    $image-shift: 3.75rem;
+    
+    &::after {
+      top: 0;
+      right: 0;
+      left: calc(50vw - #{$inner-width / 2 - $image-shift} + #{$gutter});
+    }
+    
+    &__inner {
+      display: flex;
+      padding: 0;
+    }
+
+    &__image {
+      align-self: center;
+      position: relative;
+      // top: $image-shift;
+      max-width: 40rem;
+      margin-bottom: 0;
+      margin-right: 5rem;
+    }
+
+    &__wrapper {
+      padding: 7rem 0;
+    }
+  }
+}

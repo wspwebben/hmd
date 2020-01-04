@@ -1,22 +1,26 @@
 mixin hero-slider(slides)
 
-  .hero-slider&attributes(attributes)
-    .hero-slider__slider.swiper-container.js-hero-slider__slider
+  .hero-slider.js-hero-slider&attributes(attributes)
+    .hero-slider__image-slider.swiper-container.js-hero-slider__image-slider
       .hero-slider__track.swiper-wrapper
         each slide in slides
           .hero-slider__slide.swiper-slide
             +image('hero-slider__image', '16x9')(src= slide.image, role='presentation', alt='')
+    .hero-slider__content-slider.swiper-container.js-hero-slider__content-slider
+      .hero-slider__track.swiper-wrapper
+        each slide in slides
+          .hero-slider__slide.swiper-slide            
             .hero-slider__inner
               h2.hero-slider__title= slide.title
               p.hero-slider__text= slide.text
               +button('Learn More', 'big')(href= '/service.html').hero-slider__button
 
-      .hero-slider__panel
-        .hero-slider__controls
-          button.hero-slider__control.hero-slider__control--prev.js-hero-slider__prev
-            +arrow().hero-slider__arrow
-          button.hero-slider__control.hero-slider__control--next.js-hero-slider__next
-            +arrow().hero-slider__arrow
-        .hero-slider__progress
-          span.hero-slider__progress-item.js-hero-slider__progress 01
-          span.hero-slider__progress-item.hero-slider__progress-item--total= `0${slides.length}`
+    .hero-slider__panel
+      .hero-slider__controls
+        button.hero-slider__control.hero-slider__control--prev.js-hero-slider__prev
+          +arrow().hero-slider__arrow
+        button.hero-slider__control.hero-slider__control--next.js-hero-slider__next
+          +arrow().hero-slider__arrow
+      .hero-slider__progress
+        span.hero-slider__progress-item.js-hero-slider__progress 01
+        span.hero-slider__progress-item.hero-slider__progress-item--total= `0${slides.length}`

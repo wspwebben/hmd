@@ -5,8 +5,6 @@
 
   &__slide {
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     height: auto;
   }
 
@@ -19,19 +17,19 @@
     @include round-borders(20px, ('bottom-left'));
     display: block;
   }
-
+  
   &__inner {
     @include inner();
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    height: 100%;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
   }
 
   &__title {
     @include title()
-
   }
 
   &__text {
@@ -44,7 +42,7 @@
   }
 
   &__panel {
-    padding: $gutter 0;
+    @include inner();
   }
 
   &__controls {
@@ -53,7 +51,7 @@
 
   &__control {
     flex-grow: 1;
-    padding: 1rem 2.5rem;
+    padding: $gutter 2.5rem;
     border: 0;
     background-color: transparent;
     text-align: left;
@@ -85,6 +83,15 @@
 
 @media (min-width: $screen-tablet) {
   .hero-slider {
+    // content width is around 40rem
+    // so paddings are (100% - 50rem) / 2
+    $side-width: calc(50vw - 20rem);
+
+    position: relative;
+
+    &__image-slider {
+      padding: 0 $side-width;
+    }
 
     &__image {
       @include round-borders(30px, ('bottom-left'));
@@ -101,7 +108,7 @@
 
     &__text {
       max-width: 65%;
-      margin-bottom: 2.5em;
+      // margin-bottom: 2.5em;
     }
 
     &__button {
@@ -115,17 +122,22 @@
     }
 
     &__panel {
+      position: absolute;
+      z-index: $zindex-low;
+      right: $gutter;
+      bottom: 0;
       display: flex;
       align-content:  center;
       justify-content: space-between;
-      padding: 0 $gutter;
-      padding-bottom: 3rem;
+      min-width: 25rem;
+      max-width: 28rem;
+      width: 50%;
+      padding: 2rem $gutter-small;
+      background-color: rgba($white, 0.3);
     }
 
     &__controls {
       --horizontal-padding: 3rem;
-
-      margin-left: calc(var(--horizontal-padding) * -1);
     }
 
     &__control {
@@ -174,6 +186,67 @@
   }
 }
 
+@media (min-width: 80rem) {
+  .hero-slider {
+    $outer-space: calc(50vw - #{$inner-width / 2});
+
+    display: grid;
+    grid-template-columns: $outer-space 1fr 1fr $outer-space;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "content content images images"
+                         ". panel images images";
+    background-color: transparent;
+
+    &__image-slider {
+      grid-area: images;
+      padding: 0;
+      margin: 0;
+      // max-width: 60rem;
+    }
+
+    &__content-slider {
+      grid-area: content;
+      position: relative;
+      margin: 0;
+      background-color: $alternate-bg;
+      padding-left: $outer-space;
+
+      &::before {
+        // kludge for a content background
+        content: "";
+        position:  absolute;
+        left: 0;
+        z-index: $zindex-high;
+        width: $outer-space;
+        height: 100%;
+        background-color: $alternate-bg;
+      }
+    }
+
+    &__inner {
+      padding: 3rem 0;
+      padding-right: 2em;
+    }
+
+    &__text {
+      max-width: none;
+    }
+    
+    &__button {
+      margin-top: 0;
+    }
+
+    &__panel {
+      position: static;
+      grid-area: panel;
+      flex-direction: row-reverse;
+      max-width: none;
+      width: 100%;
+      padding: 1rem 0;
+      background-color: transparent;
+    }
+  }
+}
 
 .no-js {
   .hero-slider {

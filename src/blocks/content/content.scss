@@ -1,4 +1,6 @@
 .content {
+  max-width: 53.75rem;
+  margin: 0 auto;
 
   h1,
   h2 {
@@ -15,12 +17,6 @@
     &:last-child {
       margin-bottom: 0;
     }
-  }
-
-  .image {
-    @include round-borders(20px);
-    min-height: 10rem;
-    margin-bottom: $gutter-gap;
   }
 
   ul {
@@ -89,5 +85,45 @@
 
   .is-gap {
     margin-bottom: $gutter-gap;
+  }
+}
+
+@media (min-width: $screen-desktop) {
+  .content {
+    $this: &;
+
+    &--align-left {
+      margin-left: 0;
+      margin-right: auto;
+      text-align: left;;
+    }
+
+    &--separated-heading {
+      display: flex;
+      max-width: none;
+
+      #{$this}__heading {
+        margin-bottom: 0;
+        margin-right: 2em;
+        flex-shrink: 0;
+      }
+
+      #{$this}__text {
+        flex-basis: 66%;
+        margin-left: auto;
+      }
+    }
+
+    ul {
+      margin-left: -$gutter;
+      
+      li {
+        padding-left: $gutter;
+
+        &:not(:last-child) {
+          margin-bottom: 1em;
+        }
+      }
+    }
   }
 }

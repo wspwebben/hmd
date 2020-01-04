@@ -30,6 +30,7 @@
   &__image {
     @include round-borders(20px);
     min-height: 10rem;
+    margin-bottom: $gutter-gap;
   }
 
   &__title {

@@ -90,11 +90,40 @@
 
 @media (min-width: $screen-desktop) {
   .content {
+    $this: &;
 
     &--align-left {
       margin-left: 0;
       margin-right: auto;
       text-align: left;;
+    }
+
+    &--separated-heading {
+      display: flex;
+      max-width: none;
+
+      #{$this}__heading {
+        margin-bottom: 0;
+        margin-right: 2em;
+        flex-shrink: 0;
+      }
+
+      #{$this}__text {
+        flex-basis: 66%;
+        margin-left: auto;
+      }
+    }
+
+    ul {
+      margin-left: -$gutter;
+      
+      li {
+        padding-left: $gutter;
+
+        &:not(:last-child) {
+          margin-bottom: 1em;
+        }
+      }
     }
   }
 }

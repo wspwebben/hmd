@@ -5,10 +5,10 @@ mixin grid(items, formatter, moreButton, mods)
     const allMods = modList.map(mod => `${element}--${mod}`).join(' ');
 
   .grid(class=allMods)&attributes(attributes)
-    ul.grid__list
+    ul.grid__list.js-load-more__list
       each item in items
         li.grid__item
           +#{formatter}(item)
 
     if moreButton
-      +button('More', 'transparent big').grid__more
+      +button('More', 'transparent big').grid__more.js-load-more__button

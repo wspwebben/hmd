@@ -78,10 +78,5 @@
     "micromodal": "^0.4.2",
     "svg4everybody": "^2.1.9",
     "swiper": "^5.0.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }

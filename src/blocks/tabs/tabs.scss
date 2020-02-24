@@ -1,22 +1,63 @@
 .tabs {
   $block-name: &;
+  $tablet-padding: $gutter-big;
 
   background-color: $white;
-  color: $black;  
+  color: $black;
   
   @include round-borders();
-  overflow: auto;
 
+  @media (min-width: $screen-tablet) {
+    padding: 0 $tablet-padding;
+    // padding-right doesnt work well with overflow
+  }
+  
+  &:not(.swiper-container-initialized) {
+    overflow: auto;
+  }
+  
   &__list {
     @include list();
     display: flex;
+
+    @media (min-width: $screen-desktop) {
+      width: max-content;
+      margin: 0 all;
+    }
   }
 
   &__item {
-    $padding: 13px;
     flex-shrink: 0;
+    width: auto;
+    
+    @media (min-width: $screen-tablet) {
+      &:last-child {
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: -$tablet-padding;
+          width: $tablet-padding;
+          height: 1px;
+        }
+      }
+    }
+  }
 
+  &__link {
+    $padding: 13px;
+
+    display: block;
     padding: $padding $gutter;
+    color: inherit;
+    cursor: pointer;
+
+    @media (min-width: $screen-tablet) {
+      padding-top: $gutter;
+      padding-bottom: $gutter;
+    }
 
     &--active {
       position: relative;

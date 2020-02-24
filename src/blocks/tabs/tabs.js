@@ -1,7 +1,12 @@
-/* global document */
+import Swiper from 'swiper';
 
-// const ready = require('../../js/utils/documentReady.js');
+const block = 'js-tabs';
+const elem = document.querySelector(`.${block}`);
 
-// ready(function(){
-//   
-// });
+if (elem && window.matchMedia('(min-width: 60rem)').matches) {
+  const slider = new Swiper(elem, {
+    slidesPerView: 'auto',
+    mousewheel: true,
+    freeMode: true,
+  });
+}

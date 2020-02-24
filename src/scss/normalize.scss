@@ -123,7 +123,10 @@ a {
 
   &:hover,
   &:focus {
-    color: $link-color-hover;
+    &[href] {
+      color: $link-color-hover;
+      outline: 0;
+    }
   }
 }
 

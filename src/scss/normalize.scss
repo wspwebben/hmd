@@ -123,9 +123,11 @@ a {
 
   &:hover,
   &:focus {
-    &[href] {
-      color: $link-color-hover;
-      outline: 0;
+    color: $link-color-hover;
+    outline: 0;
+
+    &:not([href]) {
+      color: inherit;
     }
   }
 }

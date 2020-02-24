@@ -4,6 +4,7 @@
 
   @include round-borders(20px);
 
+  height: 100%;
   position: relative;
   overflow: hidden;
   background-color: $bgcolor;
@@ -44,7 +45,7 @@
     @include subtitle();
     position: relative;
 
-    @media (max-width: $screen-tablet - 1) {
+    @media (max-width: $screen-tablet) {
       color: inherit;
     }
   }
@@ -73,7 +74,6 @@
   .service {
     $this: &;
 
-    height: 100%;
     overflow: hidden;
     background-color: $alternate-bg;
     color: $light-black;
@@ -109,7 +109,7 @@
 
     &__back {
       transition: transform $transition-time-fast;
-      transform: translateY(-100%);
+      transform: translateY(-101%);
     }
 
     &__title {

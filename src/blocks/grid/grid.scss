@@ -23,16 +23,12 @@
   }
 }
 
-@media (min-width: $screen-tablet) {
+@media (min-width: 35rem) {
   .grid {
-    --columns: 3;
+    --columns: 2;
 
     &--narrow {
       max-width: none;
-    }
-
-    &--tablet-wide {
-      --columns: 2;
     }
 
     &__list {
@@ -50,6 +46,12 @@
       margin: 0 auto;
       margin-top: 3rem;
     }
+  }
+}
+
+@media (min-width: $screen-tablet) {
+  .grid {
+    --columns: 3;
   }
 }
 

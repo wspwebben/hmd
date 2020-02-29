@@ -16,6 +16,12 @@
   &__image {
     @include round-borders(20px, ('bottom-left'));
     display: block;
+    height: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
   }
   
   &__inner {

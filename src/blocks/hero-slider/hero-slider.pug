@@ -5,7 +5,7 @@ mixin hero-slider(slides)
       .hero-slider__track.swiper-wrapper
         each slide in slides
           .hero-slider__slide.swiper-slide
-            +image('hero-slider__image', '16x9')(src= slide.image, role='presentation', alt='')
+            +image('hero-slider__image')(src= slide.image, role='presentation', alt='')
     .hero-slider__content-slider.swiper-container.js-hero-slider__content-slider
       .hero-slider__track.swiper-wrapper
         each slide in slides

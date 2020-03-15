@@ -4,6 +4,7 @@ mixin service(service)
       .service__back(style=`background-image: url(${service.image})` role='presentation')
       h2.service__title= service.title
       if service.text
-        p.service__text= service.text
+        .service__text
+          p= service.text
       +arrow().service__arrow
     

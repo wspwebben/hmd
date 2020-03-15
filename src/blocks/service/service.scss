@@ -54,6 +54,10 @@
     @include text();
     display: none;
     position: relative;
+
+    p {
+      margin-top: 0;
+    }
   }
 
   &__arrow {

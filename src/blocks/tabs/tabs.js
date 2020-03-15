@@ -9,4 +9,9 @@ if (elem && window.matchMedia('(min-width: 60rem)').matches) {
     mousewheel: true,
     freeMode: true,
   });
+
+  // for some reasons, without update swiper doesn't allow scrolling to the end
+  setTimeout(() => {
+    slider.update();
+  }, 0)
 }

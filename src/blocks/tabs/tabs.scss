@@ -18,6 +18,7 @@
   
   &__list {
     @include list();
+    position: relative;
     display: flex;
 
     @media (min-width: $screen-desktop) {
@@ -40,7 +41,7 @@
           bottom: 0;
           right: -$tablet-padding;
           width: $tablet-padding;
-          height: 1px;
+          height: 100%;
         }
       }
     }

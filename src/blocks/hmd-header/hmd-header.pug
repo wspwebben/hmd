@@ -1,7 +1,0 @@
-mixin hmd-header(isFooter = false)
-
-  header.hmd-header(class = `hmd-header--${isFooter ? 'footer' : 'header'}`)&attributes(attributes)
-    .hmd-header__inner
-      +logo().hmd-header__logo
-      +main-nav(page).hmd-header__menu
-      

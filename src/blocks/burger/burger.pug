@@ -1,8 +1,0 @@
-mixin burger(mods)
-  -
-    const modList = mods ? mods.split(' ') : [];
-    const allMods = modList.reduce((classname, mod) => classname + `burger--${mod}`, '')
-
-  button.burger.js-burger(class=allMods)&attributes(attributes)
-    span.burger__icon
-      span.burger__line

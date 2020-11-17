@@ -1,8 +1,0 @@
-mixin tabs(items)
-  .tabs.js-tabs.swiper-container&attributes(attributes)
-    ul.tabs__list.swiper-wrapper
-      each item in items 
-        - tabs[0].isActive = tabs.every(tab => !tab.isActive) ? true : tabs[0].isActive;
-        li.tabs__item.swiper-slide
-          a.tabs__link(class=item.isActive ? 'tabs__link--active' : '', href=item.isActive ? false : '#')= item.caption
-      //- li.tabs__spacer.swiper-slide
